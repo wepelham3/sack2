@@ -2,6 +2,7 @@
 
 export(cross_table)
 export(fit_mice_for_diag)
+export(get_num_NA)
 export(inspect_pred.matrix)
 export(inspect_sav)
 export(notify_cell)
