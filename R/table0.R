@@ -7,8 +7,8 @@
 #'
 #' @export
 #' @examples
-#' table0()
-#' table1()
+#' table0(mtcars$cyl, mtcars$gear)
+#' table0(mtcars$cyl, mtcars$gear)
 
 #**********************************************************
 table0 <- function (..., exclude = if (useNA == "no") c(NA, NaN), useNA = c("no",
@@ -94,6 +94,6 @@ table0 <- function (..., exclude = if (useNA == "no") c(NA, NaN), useNA = c("no"
 
 #' @export
 table1 = function(vector) {
-    round(sack::table0(vector) / sum(sack::table0(vector)), 2)
+    round(sack2::table0(vector) / sum(sack2::table0(vector)), 2)
 }
 #**********************************************************
