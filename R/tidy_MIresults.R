@@ -1,4 +1,4 @@
-#' tidy_MIresults
+#' Tidy the result of a \code{mitools} analysis
 #'
 #' Produce a tidy dataframe of the results of a multiple imputation analysis conducted with \code{mitools} package.
 #'

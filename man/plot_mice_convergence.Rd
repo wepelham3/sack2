@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_mice_convergence.R
 \name{plot_mice_convergence}
 \alias{plot_mice_convergence}
-\title{plot_mice_convergence}
+\title{Plot imputation convergence for \code{mice} model}
 \usage{
 plot_mice_convergence(mids.object, vars)
 }
@@ -12,7 +12,7 @@ plot_mice_convergence(mids.object, vars)
 \item{vars}{Character vector of names of variables to plot.}
 }
 \description{
-Plot imputation convergence for \code{mice} models.
+Plot imputation convergence for \code{mice} model
 }
 \examples{
 plot_mice_convergence(df.imp, c("dv1", "dv2", "dv3"))

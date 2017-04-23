@@ -1,4 +1,4 @@
-#' plot_mice_distrib_poly
+#' Plot imputed vs. raw data for a polytomous variable in \code{mice} model
 #'
 #' Plot imputed vs. raw data for a single multi-category variable in \code{mice} models.
 #'

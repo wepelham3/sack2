@@ -2,7 +2,7 @@
 % Please edit documentation in R/round0.R
 \name{round0}
 \alias{round0}
-\title{round0}
+\title{Round all numeric columns in a dataframe}
 \usage{
 round0(df, digits)
 }
@@ -12,7 +12,7 @@ round0(df, digits)
 \item{data}{Dataframe whose numeric columns should be rounded.}
 }
 \description{
-Rounds all numeric columns in a dataframe to specific number of digits.
+Round all numeric columns in a dataframe
 }
 \examples{
 round0(df, 0)

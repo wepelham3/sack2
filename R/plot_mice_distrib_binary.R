@@ -1,4 +1,4 @@
-#' plot_mice_distrib_binary
+#' Plot imputed vs. raw data for a binary variable in \code{mice} model
 #'
 #' Plot imputed vs. raw data for a single binary variable in \code{mice} models.
 #'

@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_num_NA.R
 \name{get_num_NA}
 \alias{get_num_NA}
-\title{get_num_NA}
+\title{Return tidy summary of NAs in dataframe}
 \usage{
 get_num_NA(data)
 }

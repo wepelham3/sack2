@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_sav.R
 \name{inspect_sav}
 \alias{inspect_sav}
-\title{inspect_sav}
+\title{Inspect labeling metadata from .sav file}
 \usage{
 inspect_sav(path.or.df, view = FALSE)
 }

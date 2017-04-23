@@ -2,7 +2,7 @@
 % Please edit documentation in R/notify_cell.R
 \name{notify_cell}
 \alias{notify_cell}
-\title{notify_cell}
+\title{Send a text notification to cell phone}
 \usage{
 notify_cell(cell.number, text.content)
 }
@@ -12,7 +12,7 @@ notify_cell(cell.number, text.content)
 \item{text.content}{String that is body of message, i.e. contents of text.}
 }
 \description{
-Send a text notification to cell phone via text.
+Send a text notification to cell phone.
 Only works with ATT carriers.
 Uses MMS in order to appear as coming from email address to recipient, rather than a new number every time.
 }

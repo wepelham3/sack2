@@ -1,6 +1,6 @@
-#' source_all
+#' Source all R scripts within a folder
 #'
-#' Source all R scripts within a folder.  Directly copied from miceadds package (https://github.com/cran/miceadds);
+#' irectly copied from miceadds package (https://github.com/cran/miceadds);
 #' that package loaded too many other extraneous things.
 #' @param folder Target folder with scripts to be sourced.
 #' @export

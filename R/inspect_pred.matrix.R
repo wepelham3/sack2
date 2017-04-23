@@ -1,4 +1,4 @@
-#' inspect_pred.matrix
+#' Inspect the prediction matrix before imputation
 #'
 #' Function to check the prediction matrix before imputation.
 #' Returns dataframe with following values for each variable in the model:

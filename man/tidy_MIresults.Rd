@@ -2,7 +2,7 @@
 % Please edit documentation in R/tidy_MIresults.R
 \name{tidy_MIresults}
 \alias{tidy_MIresults}
-\title{tidy_MIresults}
+\title{Tidy the result of a \code{mitools} analysis}
 \usage{
 tidy_MIresults(MIresults)
 }

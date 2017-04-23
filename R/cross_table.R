@@ -1,7 +1,6 @@
-#' cross_table
+#' Version of \code{gmodels::CrossTable} with better defaults
 #'
-#' A version of \code{gmodels::CrossTable} that defaults to not including
-#' any of the proportions that clutter the table.
+#' Defaults to not including any of the proportions that clutter the table.
 #'
 #' Copied from the \code{gmodels} source on 01/21/2017.
 #'

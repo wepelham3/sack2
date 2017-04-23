@@ -1,4 +1,4 @@
-#' n_unique
+#' Count unique values of vector
 #'
 #' Function to count number of unique values in a vector.
 #'

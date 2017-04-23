@@ -2,7 +2,7 @@
 % Please edit documentation in R/source_lines.R
 \name{source_lines}
 \alias{source_lines}
-\title{source_lines}
+\title{Source specific lines in an R file}
 \usage{
 source_lines(file, lines)
 }
@@ -12,9 +12,6 @@ source_lines(file, lines)
 \item{lines}{numeric vector of lines to source in \code{file}.}
 }
 \description{
-Source specific lines in an R file.
-}
-\details{
 From https://gist.github.com/christophergandrud/1eb4e095974204b12af9.
 }
 \examples{

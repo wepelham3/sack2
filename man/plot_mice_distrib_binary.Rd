@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_mice_distrib_binary.R
 \name{plot_mice_distrib_binary}
 \alias{plot_mice_distrib_binary}
-\title{plot_mice_distrib_binary}
+\title{Plot imputed vs. raw data for a binary variable in \code{mice} model}
 \usage{
 plot_mice_distrib_binary(mids.object, var.to.plot)
 }

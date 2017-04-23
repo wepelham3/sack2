@@ -1,4 +1,4 @@
-#' get_num_NA
+#' Return tidy summary of NAs in dataframe
 #'
 #' Function to return a dataframe with description of freuqency of NAs
 #' in target dataframe.

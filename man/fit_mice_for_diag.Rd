@@ -2,7 +2,7 @@
 % Please edit documentation in R/fit_mice_for_diag.R
 \name{fit_mice_for_diag}
 \alias{fit_mice_for_diag}
-\title{fit_mice_for_diag}
+\title{Create a \code{mice} object for diagnostics}
 \usage{
 fit_mice_for_diag(data, pred, method)
 }

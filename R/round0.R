@@ -1,6 +1,4 @@
-#' round0
-#'
-#' Rounds all numeric columns in a dataframe to specific number of digits.
+#' Round all numeric columns in a dataframe
 #'
 #' @param data Dataframe whose numeric columns should be rounded.
 #' @param digits Number of digits to round to.

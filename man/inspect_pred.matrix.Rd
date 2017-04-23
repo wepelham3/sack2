@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_pred.matrix.R
 \name{inspect_pred.matrix}
 \alias{inspect_pred.matrix}
-\title{inspect_pred.matrix}
+\title{Inspect the prediction matrix before imputation}
 \usage{
 inspect_pred.matrix(data, pred.matrix)
 }

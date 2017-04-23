@@ -2,7 +2,7 @@
 % Please edit documentation in R/table0.R
 \name{table0}
 \alias{table0}
-\title{table0}
+\title{Version of \code{table} with better defaults}
 \usage{
 table0(..., exclude = if (useNA == "no") c(NA, NaN), useNA = c("no",
   "ifany", "always"), dnn = list.names(...), deparse.level = 1)

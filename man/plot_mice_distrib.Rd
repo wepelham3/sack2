@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_mice_distrib.R
 \name{plot_mice_distrib}
 \alias{plot_mice_distrib}
-\title{plot_mice_distrib}
+\title{Plot imputed vs. raw data for \code{mice} model}
 \usage{
 plot_mice_distrib(mids.object, vars)
 }
@@ -12,11 +12,8 @@ plot_mice_distrib(mids.object, vars)
 \item{vars}{Character vector of names of variables to plot.}
 }
 \description{
-Plot imputed vs. raw data for \code{mice} models.
-}
-\details{
 Will use the \code{mice} plotting methods for continuous variables,
-and the \code{sack} custom plotting methods for categorical variables
+and the \code{sack2} custom plotting methods for categorical variables
 (as indicated by the imputation method used).
 }
 \examples{

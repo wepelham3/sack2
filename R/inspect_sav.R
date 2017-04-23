@@ -1,4 +1,4 @@
-#' inspect_sav
+#' Inspect labeling metadata from .sav file
 #'
 #' Function that returns dataframe with name, label, values, and value
 #' labels for all variables in an SPSS data file.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/n_unique.R
 \name{n_unique}
 \alias{n_unique}
-\title{n_unique}
+\title{Count unique values of vector}
 \usage{
 n_unique(vec)
 }

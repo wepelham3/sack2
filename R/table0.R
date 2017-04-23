@@ -1,4 +1,4 @@
-#' table0
+#' Version of \code{table} with better defaults
 #'
 #' First, \code{table0} is a version of \code{table()} in base R that automatically supplies \code{useNA = "always"}.
 #' See that function for documentation. Second, \code{table1} is a wrapper for \code{table0} that automatically returns the proportions

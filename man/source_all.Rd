@@ -2,7 +2,7 @@
 % Please edit documentation in R/source_all.R
 \name{source_all}
 \alias{source_all}
-\title{source_all}
+\title{Source all R scripts within a folder}
 \usage{
 source_all(path, grepstring = "\\\\.R", print.source = TRUE)
 }
@@ -10,7 +10,7 @@ source_all(path, grepstring = "\\\\.R", print.source = TRUE)
 \item{folder}{Target folder with scripts to be sourced.}
 }
 \description{
-Source all R scripts within a folder.  Directly copied from miceadds package (https://github.com/cran/miceadds);
+irectly copied from miceadds package (https://github.com/cran/miceadds);
 that package loaded too many other extraneous things.
 }
 \examples{

@@ -1,4 +1,4 @@
-#' fit_mice_for_diag
+#' Create a \code{mice} object for diagnostics
 #'
 #' Function that creates a \code{mice} object for diagnostics, with
 #' \code{m = 5}. Iteratively increases the number of iterations by 5 until

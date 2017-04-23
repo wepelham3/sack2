@@ -1,9 +1,7 @@
-#' plot_mice_distrib
-#'
-#' Plot imputed vs. raw data for \code{mice} models.
+#' Plot imputed vs. raw data for \code{mice} model
 #'
 #' Will use the \code{mice} plotting methods for continuous variables,
-#' and the \code{sack} custom plotting methods for categorical variables
+#' and the \code{sack2} custom plotting methods for categorical variables
 #' (as indicated by the imputation method used).
 #'
 #' @param mids.object \code{mids} object containing variables to plot.

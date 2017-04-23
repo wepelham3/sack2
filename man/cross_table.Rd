@@ -2,7 +2,7 @@
 % Please edit documentation in R/cross_table.R
 \name{cross_table}
 \alias{cross_table}
-\title{cross_table}
+\title{Version of \code{gmodels::CrossTable} with better defaults}
 \usage{
 cross_table(x, y, digits = 3, max.width = 5, expected = FALSE,
   prop.r = FALSE, prop.c = FALSE, prop.t = FALSE, prop.chisq = FALSE,
@@ -11,8 +11,7 @@ cross_table(x, y, digits = 3, max.width = 5, expected = FALSE,
   format = c("SAS", "SPSS"), dnn = NULL, ...)
 }
 \description{
-A version of \code{gmodels::CrossTable} that defaults to not including
-any of the proportions that clutter the table.
+Defaults to not including any of the proportions that clutter the table.
 }
 \details{
 Copied from the \code{gmodels} source on 01/21/2017.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_mice_distrib_poly.R
 \name{plot_mice_distrib_poly}
 \alias{plot_mice_distrib_poly}
-\title{plot_mice_distrib_poly}
+\title{Plot imputed vs. raw data for a polytomous variable in \code{mice} model}
 \usage{
 plot_mice_distrib_poly(mids.object, var.to.plot)
 }

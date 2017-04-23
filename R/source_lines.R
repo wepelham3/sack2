@@ -1,6 +1,4 @@
-#' source_lines
-#'
-#' Source specific lines in an R file.
+#' Source specific lines in an R file
 #'
 #' From https://gist.github.com/christophergandrud/1eb4e095974204b12af9.
 #'

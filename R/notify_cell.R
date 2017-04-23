@@ -1,6 +1,6 @@
-#' notify_cell
+#' Send a text notification to cell phone
 #'
-#' Send a text notification to cell phone via text.
+#' Send a text notification to cell phone.
 #' Only works with ATT carriers.
 #' Uses MMS in order to appear as coming from email address to recipient, rather than a new number every time.
 #'

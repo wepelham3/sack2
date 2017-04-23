@@ -1,6 +1,4 @@
-#' plot_mice_convergence
-#'
-#' Plot imputation convergence for \code{mice} models.
+#' Plot imputation convergence for \code{mice} model
 #'
 #' @param mids.object \code{mids} object containing variables to plot.
 #' @param vars Character vector of names of variables to plot.
