@@ -5,7 +5,7 @@
 #'
 #' @param data Dataframe.
 #' @export
-#' @examples get_num_NA(df)
+#' @examples get_num_NA(mice::boys)
 
 #**********************************************************
 get_num_NA = function(data) {

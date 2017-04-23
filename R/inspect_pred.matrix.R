@@ -7,7 +7,9 @@
 #'
 #' @param data Dataframe that will be used in \code{mice} model.
 #' @export
-#' @examples inspect_pred.matrix(df.to.imp, pred.matrix)
+#' @examples
+#' pred.matrix = quickpred(boys, mincor = 0.10, minpuc = 0.50)
+#' inspect_pred.matrix(boys, pred.matrix)
 
 #**********************************************************
 inspect_pred.matrix = function(data, pred.matrix) {

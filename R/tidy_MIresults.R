@@ -4,7 +4,11 @@
 #'
 #' @param MIresults ((i.e., the output of a \code{mitools::MIcombine} call).
 #' @export
-#' @examples tidy_MIresults(model)
+#' @examples
+#' # non-operative
+#' # with(list.of.imps, glm(y ~ x)) %>%
+#' #    MIcombine() %>%
+#' #    tidy_MIresults()
 
 tidy_MIresults = function(MIresults) {
 

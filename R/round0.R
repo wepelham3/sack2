@@ -3,8 +3,9 @@
 #' @param data Dataframe whose numeric columns should be rounded.
 #' @param digits Number of digits to round to.
 #' @export
-#' @examples round0(df, 0)
-#' round0()
+#' @examples
+#' mtcars
+#' round0(mtcars, 1)
 
 #**********************************************************
 round0 <- function(df, digits) {

@@ -19,5 +19,5 @@ Copied from the \code{gmodels} source on 01/21/2017.
 Use \code{?gmodels::CrossTable} to see arguments and examples.
 }
 \examples{
-cross_table()
+cross_table(mtcars$cyl, mtcars$gear)
 }

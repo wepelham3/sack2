@@ -7,13 +7,13 @@
 source_all(path, grepstring = "\\\\.R", print.source = TRUE)
 }
 \arguments{
-\item{folder}{Target folder with scripts to be sourced.}
+\item{folder}{Path to target folder with scripts to be sourced.}
 }
 \description{
 irectly copied from miceadds package (https://github.com/cran/miceadds);
 that package loaded too many other extraneous things.
 }
 \examples{
-source_all("helpers/")
-source_all()
+# non-operative
+# source_all("helpers/")
 }

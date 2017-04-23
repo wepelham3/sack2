@@ -8,7 +8,9 @@
 #' @param vars Character vector of names of variables to plot.
 #' @export
 #' @examples
-#' plot_mice_distrib(df.imp, c("cont.dv1", "dummy.dv2", "multicat.dv3"))
+#' boys2 <- cbind(boys, dummy = rbinom(nrow(boys), 1, .5))
+#' df.imp <- mice(boys2, method = c("pmm", "pmm", "pmm", "pmm", "pmm", "pmm", "polr", "pmm", "pmm", "logreg"))
+#' plot_mice_distrib(df.imp, c("hgt", "dummy", "phb"))
 
 #**********************************************************
 plot_mice_distrib = function(mids.object, vars) {

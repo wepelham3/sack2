@@ -15,5 +15,6 @@ source_lines(file, lines)
 From https://gist.github.com/christophergandrud/1eb4e095974204b12af9.
 }
 \examples{
-source_lines("load-data.R", 1 : 20)
+# non-operative
+# source_lines("load-data.R", 1 : 20)
 }

@@ -15,6 +15,6 @@ round0(df, digits)
 Round all numeric columns in a dataframe
 }
 \examples{
-round0(df, 0)
-round0()
+mtcars
+round0(mtcars, 1)
 }

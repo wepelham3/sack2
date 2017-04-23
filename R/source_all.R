@@ -2,10 +2,11 @@
 #'
 #' irectly copied from miceadds package (https://github.com/cran/miceadds);
 #' that package loaded too many other extraneous things.
-#' @param folder Target folder with scripts to be sourced.
+#' @param folder Path to target folder with scripts to be sourced.
 #' @export
-#' @examples source_all("helpers/")
-#' source_all()
+#' @examples
+#' # non-operative
+#' # source_all("helpers/")
 
 #**********************************************************
 # function for sourcing all files within a folder

@@ -6,8 +6,8 @@
 #' @param var.to.plot String of name of the single variable to plot.
 #' @export
 #' @examples
-#' plot_mice_distrib_poly(df.imp, "ses.category")
-
+#' df.imp <- mice(boys, method = c("pmm", "pmm", "pmm", "pmm", "pmm", "pmm", "polr", "pmm", "pmm"))
+#' plot_mice_distrib_poly(df.imp, "phb")
 #**********************************************************
 plot_mice_distrib_poly = function(mids.object, var.to.plot) {
 

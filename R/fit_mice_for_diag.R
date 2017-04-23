@@ -14,7 +14,10 @@
 #' @param method Character vector of methods to use for each variable in imputation model.
 #' @export
 #' @examples
-#' fit_mice_for_diag(data = df.to.imp, pred = pred.matrix, method = mice.vars$method)
+#' pred.matrix <- quickpred(boys, mincor = .10)
+#' df.imp.m5 <- fit_mice_for_diag(boys, pred.matrix, method = c("pmm", "pmm", "pmm", "pmm", "pmm", "pmm", "polr", "pmm", "pmm"))
+#' df.imp.m5$m
+#' df.imp.m5$iteration
 
 #**********************************************************
 fit_mice_for_diag = function(data, pred, method) {

@@ -8,9 +8,10 @@
 #' @param view Logical indicating whether to return the dataframe or send to View().
 #' @export
 #' @examples
-#' inspect_sav("my-data.sav")
-#' inspect_sav(my.df)
-#' inspect_sav(my.df, view = TRUE)
+#' # non-operative
+#' # inspect_sav("my-data.sav")
+#' # inspect_sav(my.df)
+#' # inspect_sav(my.df, view = TRUE)
 
 #**********************************************************
 inspect_sav = function(path.or.df, view = FALSE) {

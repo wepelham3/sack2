@@ -17,7 +17,8 @@ Function that returns dataframe with name, label, values, and value
 labels for all variables in an SPSS data file.
 }
 \examples{
-inspect_sav("my-data.sav")
-inspect_sav(my.df)
-inspect_sav(my.df, view = TRUE)
+# non-operative
+# inspect_sav("my-data.sav")
+# inspect_sav(my.df)
+# inspect_sav(my.df, view = TRUE)
 }

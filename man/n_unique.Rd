@@ -13,5 +13,6 @@ n_unique(vec)
 Function to count number of unique values in a vector.
 }
 \examples{
-n_unique(vector)
+n_unique(rnorm(10))
+n_unique(rbinom(10, 1, .5))
 }

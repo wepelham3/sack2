@@ -5,7 +5,8 @@
 #' @param file character string with the path to the file to source.
 #' @param lines numeric vector of lines to source in \code{file}.
 #' @examples
-#' source_lines("load-data.R", 1 : 20)
+#' # non-operative
+#' # source_lines("load-data.R", 1 : 20)
 
 source_lines <- function(file, lines){
     source(textConnection(readLines(file)[lines]))

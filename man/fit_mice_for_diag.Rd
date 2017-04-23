@@ -25,5 +25,8 @@ imputation model.
 See \code{mice::mice} for more documentation of arguments.
 }
 \examples{
-fit_mice_for_diag(data = df.to.imp, pred = pred.matrix, method = mice.vars$method)
+pred.matrix <- quickpred(boys, mincor = .10)
+df.imp.m5 <- fit_mice_for_diag(boys, pred.matrix, method = c("pmm", "pmm", "pmm", "pmm", "pmm", "pmm", "polr", "pmm", "pmm"))
+df.imp.m5$m
+df.imp.m5$iteration
 }

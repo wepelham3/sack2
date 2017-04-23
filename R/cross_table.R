@@ -8,7 +8,7 @@
 #'
 #' @export
 #' @examples
-#' cross_table()
+#' cross_table(mtcars$cyl, mtcars$gear)
 
 ##################################################
 cross_table = function (x, y, digits = 3, max.width = 5, expected = FALSE,

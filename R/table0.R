@@ -1,14 +1,15 @@
 #' Version of \code{table} with better defaults
 #'
 #' First, \code{table0} is a version of \code{table()} in base R that automatically supplies \code{useNA = "always"}.
-#' See that function for documentation. Second, \code{table1} is a wrapper for \code{table0} that automatically returns the proportions
-#' (rather than frequencies) and rounds these to two digits.  Not sure how \code{table1} would work
-#' with more than one dimension in table.
+#' See that function for documentation. Second, \code{table1} is a wrapper for \code{table0} that takes a single vector and
+#' automatically returns the proportions (rather than frequencies) and rounds these to two digits.
 #'
 #' @export
 #' @examples
 #' table0(mtcars$cyl, mtcars$gear)
-#' table0(mtcars$cyl, mtcars$gear)
+#'
+#' # note that table1 only takes one argument, a vector
+#' table1(mtcars$gear)
 
 #**********************************************************
 table0 <- function (..., exclude = if (useNA == "no") c(NA, NaN), useNA = c("no",
@@ -94,6 +95,6 @@ table0 <- function (..., exclude = if (useNA == "no") c(NA, NaN), useNA = c("no"
 
 #' @export
 table1 = function(vector) {
-    round(sack2::table0(vector) / sum(sack2::table0(vector)), 2)
+  round(sack2::table0(vector) / sum(sack2::table0(vector)), 2)
 }
 #**********************************************************

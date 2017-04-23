@@ -13,5 +13,8 @@ tidy_MIresults(MIresults)
 Produce a tidy dataframe of the results of a multiple imputation analysis conducted with \code{mitools} package.
 }
 \examples{
-tidy_MIresults(model)
+# non-operative
+# with(list.of.imps, glm(y ~ x)) \%>\%
+#    MIcombine() \%>\%
+#    tidy_MIresults()
 }

@@ -4,7 +4,8 @@
 #' @param vars Character vector of names of variables to plot.
 #' @export
 #' @examples
-#' plot_mice_convergence(df.imp, c("dv1", "dv2", "dv3"))
+#' df.imp <- mice(boys, method = c("pmm", "pmm", "pmm", "pmm", "pmm", "pmm", "polr", "pmm", "pmm"))
+#' plot_mice_convergence(df.imp, c("hgt", "wgt"))
 
 #**********************************************************
 plot_mice_convergence = function(mids.object, vars) {

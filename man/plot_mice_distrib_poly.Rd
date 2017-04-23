@@ -15,5 +15,6 @@ plot_mice_distrib_poly(mids.object, var.to.plot)
 Plot imputed vs. raw data for a single multi-category variable in \code{mice} models.
 }
 \examples{
-plot_mice_distrib_poly(df.imp, "ses.category")
+df.imp <- mice(boys, method = c("pmm", "pmm", "pmm", "pmm", "pmm", "pmm", "polr", "pmm", "pmm"))
+plot_mice_distrib_poly(df.imp, "phb")
 }

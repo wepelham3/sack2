@@ -16,5 +16,6 @@ the number of missings, the number of variables used to impute it,
 and the number of variables it is used to impute.
 }
 \examples{
-inspect_pred.matrix(df.to.imp, pred.matrix)
+pred.matrix = quickpred(boys, mincor = 0.10, minpuc = 0.50)
+inspect_pred.matrix(boys, pred.matrix)
 }

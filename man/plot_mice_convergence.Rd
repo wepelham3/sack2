@@ -15,5 +15,6 @@ plot_mice_convergence(mids.object, vars)
 Plot imputation convergence for \code{mice} model
 }
 \examples{
-plot_mice_convergence(df.imp, c("dv1", "dv2", "dv3"))
+df.imp <- mice(boys, method = c("pmm", "pmm", "pmm", "pmm", "pmm", "pmm", "polr", "pmm", "pmm"))
+plot_mice_convergence(df.imp, c("hgt", "wgt"))
 }

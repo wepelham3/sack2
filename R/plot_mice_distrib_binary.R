@@ -6,8 +6,9 @@
 #' @param var.to.plot String of name of the single variable to plot.
 #' @export
 #' @examples
-#' plot_mice_distrib_binary(df.imp, "asian")
-#' plot_mice_distrib_binary(df.imp, "ever.medicated")
+#' boys2 <- cbind(boys, dummy = rbinom(nrow(boys), 1, .5))
+#' df.imp <- mice(boys2, method = c("pmm", "pmm", "pmm", "pmm", "pmm", "pmm", "polr", "pmm", "pmm", "logreg"))
+#' plot_mice_binary(df.imp, "dummy")
 
 #**********************************************************
 plot_mice_distrib_binary = function(mids.object, var.to.plot) {
