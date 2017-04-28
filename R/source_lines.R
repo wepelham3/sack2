@@ -4,6 +4,7 @@
 #'
 #' @param file character string with the path to the file to source.
 #' @param lines numeric vector of lines to source in \code{file}.
+#' @export
 #' @examples
 #' # non-operative
 #' # source_lines("load-data.R", 1 : 20)
