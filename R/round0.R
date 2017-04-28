@@ -1,5 +1,6 @@
 #' Round all numeric columns in a dataframe
 #'
+#' @importFrom magrittr "%>%"
 #' @param data Dataframe whose numeric columns should be rounded.
 #' @param digits Number of digits to round to.
 #' @export
