@@ -2,6 +2,7 @@
 
 export(cross_table)
 export(describe_NA)
+export(describe_df)
 export(fit_mice_for_diag)
 export(inspect_pred.matrix)
 export(inspect_sav)
