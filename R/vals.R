@@ -1,9 +1,9 @@
 #' Create tidy dataframe that summarizes frequency of values in a vector
 #'
-#' Akin to \code{table} with a few differences:
+#' Akin to 1-dimensional \code{table} with a few differences:
 #' (1) it returns as a dataframe, and (2) it includes the proportion of elements.
 #'
-#' Calls print internally and returns dataframe invisibly.
+#' Calls \code{print} internally and returns dataframe invisibly.
 #'
 #' @export
 #' @examples
