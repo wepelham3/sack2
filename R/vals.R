@@ -16,7 +16,7 @@ vals = function(vector) {
   df = tibble::data_frame(value = unique(vector)) %>%
     dplyr::mutate(count = purrr::map_int(value, ~ sum(vector == .x, na.rm = TRUE)),
                   prop = round(count / length(vector), 2)) %>%
-    dplyr::arrange(values)
+    dplyr::arrange(value)
 
   print(df, n = 200)
 
