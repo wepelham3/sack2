@@ -5,6 +5,7 @@
 #' Drops all factors with more than 2 levels.  Converts factors with 2 levels to numerics
 #' via \code{as.numeric(x) - 1}.
 #'
+#' @param data Dataframe.
 #' @export
 #' @examples
 #' cor0(mtcars)

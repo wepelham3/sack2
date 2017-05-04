@@ -6,6 +6,9 @@
 \usage{
 cor0(data)
 }
+\arguments{
+\item{data}{Dataframe.}
+}
 \description{
 Wraps typical workflow of \code{df \%>\% as.matrix() \%>\% Hmisc::rcorr() \%>\% broom::tidy()}.
 }
