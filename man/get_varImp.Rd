@@ -13,7 +13,17 @@ get_varImp(trained.model)
 Function to return a tidy dataframe with variable importance information
 from a model trained by \code{caret}.  Appends the algorithm and outcome information.
 }
+\details{
+Note that an error will be thrown if the method used does not permit a \code{varImp} call,
+that is, does not yield variable importance scores.  Currently shows a warning and returns
+\code{NULL} when method is \code{svmLinear}, \code{rpart}, or \code{knn}.  Other methods that
+have this issue will still result in errors.
+}
 \examples{
-model <- caret::train(data = mtcars, mpg ~ ., importance = TRUE)
-get_varImp(model)
+model1 <- caret::train(data = mtcars, mpg ~ ., method = "rf", importance = TRUE)
+get_varImp(model1)
+
+# this one will show a warning and return null
+model2 <- caret::train(data = mtcars, mpg ~ ., method = "knn", importance = TRUE)
+get_varImp(model2)
 }
