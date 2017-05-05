@@ -31,9 +31,8 @@ get_varImp = function(trained.model) {
     tibble::rownames_to_column(var = "predictor") %>%
     dplyr::rename(importance = Overall) %>%
     dplyr::mutate(algorithm = trained.model$method,
-                  outcome = trained.model$call %>%
+                  outcome = trained.model$terms %>%
                     as.character() %>%
-                    .[2] %>%
-                    stringr::word(1))
+                    .[2])
 }
 #**********************************************************
