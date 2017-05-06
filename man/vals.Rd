@@ -15,5 +15,7 @@ Calls \code{print} internally and returns dataframe invisibly.
 }
 \examples{
 vals(mtcars$gear)
-vals(mtcars$qsec)
+
+# with NAs
+vals(mice::boys$gen)
 }

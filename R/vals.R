@@ -8,13 +8,17 @@
 #' @export
 #' @examples
 #' vals(mtcars$gear)
-#' vals(mtcars$qsec)
+#'
+#' # with NAs
+#' vals(mice::boys$gen)
 
 #**********************************************************
 vals = function(vector) {
 
   df = tibble::data_frame(value = unique(vector)) %>%
-    dplyr::mutate(count = purrr::map_int(value, ~ sum(vector == .x, na.rm = TRUE)),
+    dplyr::mutate(count = ifelse(is.na(value),
+                                 purrr::map_int(value, ~ sum(is.na(vector))),
+                                 purrr::map_int(value, ~ sum(vector == .x, na.rm = TRUE))),
                   prop = round(count / length(vector), 2)) %>%
     dplyr::arrange(value)
 
