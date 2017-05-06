@@ -10,9 +10,6 @@ vals(vector)
 Akin to 1-dimensional \code{table} with a few differences:
 (1) it returns as a dataframe, and (2) it includes the proportion of elements.
 }
-\details{
-Calls \code{print} internally and returns dataframe invisibly.
-}
 \examples{
 vals(mtcars$gear)
 
