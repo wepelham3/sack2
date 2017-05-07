@@ -13,8 +13,14 @@ tidy_MIresults(MIresults)
 Produce a tidy dataframe of the results of a multiple imputation analysis conducted with \code{mitools} package.
 }
 \examples{
-# non-operative
-# with(list.of.imps, glm(y ~ x)) \%>\%
-#    MIcombine() \%>\%
-#    tidy_MIresults()
+library(mice)
+library(mitools)
+
+imp <- mice(boys)
+imp.long <- complete(imp, action = "long")
+imp.list <- imputationList(split(imp.long, imp.long$.imp))
+
+mi.results <- MIcombine(with(imp.list, glm(hgt ~ wgt)))
+
+tidy_MIresults(mi.results)
 }
