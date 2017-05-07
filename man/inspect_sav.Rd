@@ -4,13 +4,11 @@
 \alias{inspect_sav}
 \title{Inspect labeling metadata from .sav file}
 \usage{
-inspect_sav(path.or.df, view = FALSE)
+inspect_sav(path.or.df)
 }
 \arguments{
 \item{path.or.df}{Either a string indicating location of .sav file or a "labelled" dataframe
 already imported into R environment.}
-
-\item{view}{Logical indicating whether to return the dataframe or send to View().}
 }
 \description{
 Function that returns dataframe with name, label, values, and value

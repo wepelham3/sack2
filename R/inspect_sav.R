@@ -5,7 +5,6 @@
 #'
 #' @param path.or.df Either a string indicating location of .sav file or a "labelled" dataframe
 #' already imported into R environment.
-#' @param view Logical indicating whether to return the dataframe or send to View().
 #' @export
 #' @examples
 #' # non-operative
@@ -14,7 +13,7 @@
 #' # inspect_sav(my.df, view = TRUE)
 
 #**********************************************************
-inspect_sav = function(path.or.df, view = FALSE) {
+inspect_sav = function(path.or.df) {
 
     if (is.data.frame(path.or.df)) {
         labelled.df = path.or.df
