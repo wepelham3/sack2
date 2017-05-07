@@ -4,7 +4,7 @@
 \alias{fit_mice_for_diag}
 \title{Create a \code{mice} object for diagnostics}
 \usage{
-fit_mice_for_diag(data, pred, method)
+fit_mice_for_diag(data, pred, method, iter10 = FALSE)
 }
 \arguments{
 \item{data}{Dataframe to be imputed.}
@@ -12,6 +12,10 @@ fit_mice_for_diag(data, pred, method)
 \item{pred}{Square matrix indicating which variables should be used as predictors of which other variables.}
 
 \item{method}{Character vector of methods to use for each variable in imputation model.}
+
+\item{iter10}{Logical switch indicating whether function should use the iterative procedure
+to find a sufficient number of iterations. When \code{TRUE}, will stop after fitting a \code{m = 5, maxit = 10} model. Included for convenience when working with code
+that includes the function.}
 }
 \description{
 Function that creates a \code{mice} object for diagnostics, with
@@ -25,6 +29,7 @@ imputation model.
 See \code{mice::mice} for more documentation of arguments.
 }
 \examples{
+library(mice)
 pred.matrix <- quickpred(boys, mincor = .10)
 df.imp.m5 <- fit_mice_for_diag(boys, pred.matrix, method = c("pmm", "pmm", "pmm", "pmm", "pmm", "pmm", "polr", "pmm", "pmm"))
 df.imp.m5$m
