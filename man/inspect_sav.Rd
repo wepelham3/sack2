@@ -4,19 +4,22 @@
 \alias{inspect_sav}
 \title{Inspect labeling metadata from .sav file}
 \usage{
-inspect_sav(path.or.df)
+inspect_sav(path.or.data, describe = FALSE)
 }
 \arguments{
-\item{path.or.df}{Either a string indicating location of .sav file or a "labelled" dataframe
+\item{path.or.data}{Either a string indicating location of .sav file or a "labelled" dataframe
 already imported into R environment.}
+
+\item{describe}{Logical indicating whether to append descriptive information on each variable,
+in addition to the SPSS metadata. (Calls \code{describe_df()} if so).}
 }
 \description{
 Function that returns dataframe with name, label, values, and value
 labels for all variables in an SPSS data file.
 }
 \examples{
-# non-operative
-# inspect_sav("my-data.sav")
-# inspect_sav(my.df)
-# inspect_sav(my.df, view = TRUE)
+# SPSS metadata will be blank, since it is an R dataset
+library(haven)
+write_sav(mtcars, "mtcars.sav")
+inspect_sav("mtcars.sav", describe = TRUE)
 }
