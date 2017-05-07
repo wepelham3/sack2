@@ -2,7 +2,7 @@
 #'
 #' Produce a tidy dataframe of the results of a multiple imputation analysis conducted with \code{mitools} package.
 #'
-#' @param MIresults ((i.e., the output of a \code{mitools::MIcombine} call).
+#' @param MIresults (i.e., the output of a \code{mitools::MIcombine} call).
 #' @export
 #' @examples
 #' # non-operative

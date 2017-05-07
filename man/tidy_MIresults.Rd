@@ -7,7 +7,7 @@
 tidy_MIresults(MIresults)
 }
 \arguments{
-\item{MIresults}{((i.e., the output of a \code{mitools::MIcombine} call).}
+\item{MIresults}{(i.e., the output of a \code{mitools::MIcombine} call).}
 }
 \description{
 Produce a tidy dataframe of the results of a multiple imputation analysis conducted with \code{mitools} package.
