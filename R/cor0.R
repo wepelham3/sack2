@@ -6,17 +6,25 @@
 #' via \code{as.numeric(x) - 1}.
 #'
 #' @param data Dataframe.
+#' @param pattern Optional vector of patterns to match (i.e., filter for) in the resulting
+#' two columns with variable names. Useful if only interested in correlations with a specific variable (e.g., the outcome).
 #' @export
 #' @examples
 #' cor0(mtcars)
+#'
+#' # with factors and missing data
 #' cor0(mice::boys)
+#'
+#' # with a filter applied
+#' cor0(mtcars, "mpg")
+#' cor0(mtcars, c("mpg", "cyl"))
 
 #**********************************************************
-cor0 = function(data) {
+cor0 = function(data, pattern = NULL) {
 
   ncols.valid <- sum(purrr::map_dbl(data, ~ is.numeric(.x) | (is.factor(.x) & nlevels(.x == 2))))
 
-  ncols.dropped = ncol(data) - ncols.valid
+  ncols.dropped <- ncol(data) - ncols.valid
 
   if(ncols.dropped > 0) {
     warning(paste0("Dropped [", ncols.dropped, "] non-numeric columns with more than two values before computing correlations."))
@@ -31,6 +39,12 @@ cor0 = function(data) {
     as.matrix() %>%
     Hmisc::rcorr() %>%
     broom::tidy()
+
+  if (!is.null(pattern)) {
+    summary = summary %>%
+      dplyr::filter(stringr::str_detect(column1, paste(pattern, collapse = "|")) |
+                    stringr::str_detect(column2, paste(pattern, collapse = "|")))
+  }
 
   return(summary)
 }
