@@ -13,7 +13,13 @@ describe_df(data)
 Function to return a dataframe with descriptives for a target dataframe.
 Each row in the returned dataframe will correspond to a column in the original dataframe.
 }
+\details{
+Note that the count in the \code{distinct} column excludes values of \code{NA}.
+}
 \examples{
 describe_df(mtcars)
 describe_df(mice::boys)
+
+# NAs are excluded from the count of 'distinct'
+describe_df(data.frame(var1 = c(0, 1, 1, 0, NA)))
 }

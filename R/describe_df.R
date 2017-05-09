@@ -3,11 +3,16 @@
 #' Function to return a dataframe with descriptives for a target dataframe.
 #' Each row in the returned dataframe will correspond to a column in the original dataframe.
 #'
+#' Note that the count in the \code{distinct} column excludes values of \code{NA}.
+#'
 #' @param data Dataframe.
 #' @export
 #' @examples
 #' describe_df(mtcars)
 #' describe_df(mice::boys)
+#'
+#' # NAs are excluded from the count of 'distinct'
+#' describe_df(data.frame(var1 = c(0, 1, 1, 0, NA)))
 
 #**********************************************************
 describe_df = function(data) {
@@ -15,7 +20,9 @@ describe_df = function(data) {
   # calculate columns that apply to all variables
   results.all = tibble::data_frame(variable = names(data),
                                    n = colSums(!is.na(data)),
-                                   distinct = purrr::map_dbl(data, sack2::n_unique))
+                                   distinct = purrr::map(data, unique) %>%
+                                     purrr::map(purrr::discard, .p = function(.x){is.na(.x)}) %>%
+                                     purrr::map_dbl(length))
 
 
   data.numeric = data %>%
