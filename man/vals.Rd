@@ -10,6 +10,10 @@ vals(vector)
 Akin to 1-dimensional \code{table} with a few differences:
 (1) it returns as a dataframe, and (2) it includes the proportion of elements.
 }
+\details{
+Note that the \code{cum.prop} column in resulting dataframe was calculated after
+sorting based on value.  It will not remain correct if resorted.
+}
 \examples{
 vals(mtcars$gear)
 
