@@ -16,14 +16,14 @@ from a model trained by \code{caret}.  Appends the algorithm and outcome informa
 \details{
 Note that an error will be thrown if the method used does not permit a \code{varImp} call,
 that is, does not yield variable importance scores.  Currently shows a warning and returns
-\code{NULL} when method is \code{svmLinear}, \code{rpart}, or \code{knn}.  Other methods that
-have this issue will still result in errors.
+\code{NULL} whenever the call to \code{caret::varImp()} returns an error (e.g.,
+if that algorithm has no variable importance metrics).
 }
 \examples{
-model1 <- caret::train(data = mtcars, mpg ~ ., method = "rf", importance = TRUE)
+model1 <- caret::train(data = mtcars, mpg ~ ., method = "glm")
 get_varImp(model1)
 
 # this one will show a warning and return null
-model2 <- caret::train(data = mtcars, mpg ~ ., method = "knn", importance = TRUE)
+model2 <- caret::train(data = mtcars, mpg ~ ., method = "ranger")
 get_varImp(model2)
 }
