@@ -20,9 +20,12 @@ vals = function(vector) {
     dplyr::mutate(count = ifelse(is.na(value),
                                  purrr::map_int(value, ~ sum(is.na(vector))),
                                  purrr::map_int(value, ~ sum(vector == .x, na.rm = TRUE))),
-                  prop = round(count / length(vector), 2)) %>%
+                  prop = count / length(vector)) %>%
     dplyr::arrange(value) %>%
-    dplyr::mutate(cum.prop = cumsum(prop))
+    dplyr::mutate(cum.prop = cumsum(prop)) %>%
+    # round, now that cum.prop has been computed
+    dplyr::mutate_at(.vars = c("prop", "cum.prop"),
+                     .funs = "round", 2)
 
   return(df)
 
