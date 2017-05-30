@@ -28,9 +28,16 @@
 vals = function(data, var = NULL) {
 
   if (is.data.frame(data)){
+
+    # otherwise may append the grouping variable(s) onto front of df
+    if (dplyr::is_grouped_df(data)) data <- dplyr::ungroup(data)
+
     vector <- dplyr::select(data, !!rlang::enquo(var)) %>% .[[1]]
+
   } else if (is.null(var)){
+
     vector <- data
+
   } else {
     stop("Cannot understand inputs.")
   }
