@@ -14,6 +14,5 @@ Converts a vector of p values into character vector of the
 symbols ***, **, *, †.
 }
 \examples{
-
 pval_to_symbol(c(.50, .0004, .098, .044))
 }
