@@ -11,10 +11,10 @@ A collection of miscellaneous useful functions used across projects.
 - `describe_df` to tidily summarize a dataframe
 - `describe_NA` to tidily summarize missing data
 - `cor0` to tidily summarize pairwise correlations
-- `table0` to call `table()` with NAs includede
+- `table0` to call `table()` with `NA`s included
 - `cross_table` to call `gmodels::CrossTable()` with all proportions suppressed
 - `pval_to_symbol` to convert numeric p values to corresponding significance symbols
-- `replace_NAs_with_medians` to replace `NA`s with medians throughout datafrmae
+- `replace_NAs_with_medians` to replace `NA`s with medians throughout dataframe
 - `round0` to round all numeric columns in a dataframe
 
 ### Workflow functions:
