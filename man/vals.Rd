@@ -4,19 +4,33 @@
 \alias{vals}
 \title{Create tidy dataframe that summarizes frequency of values in a vector}
 \usage{
-vals(vector)
+vals(data, var = NULL)
+}
+\arguments{
+\item{data}{Either a vector, or a dataframe in which to find \code{var}.}
+
+\item{var}{When \code{data} is a dataframe, bare name of column to use.}
 }
 \description{
 Akin to 1-dimensional \code{table} with a few differences:
-(1) it returns as a dataframe, and (2) it includes the proportion of elements.
+it returns as a dataframe,
+it always includes \code{NA}s,
+it includes the proportion of elements,
+it can take a \code{vals(df, var)} input format for easy chaining.
 }
 \details{
 Note that the \code{cum.prop} column in resulting dataframe was calculated after
 sorting based on value.  It will not remain correct if resorted.
 }
 \examples{
+
+# first input format uses a (df, name) specification like dplyr
+vals(mtcars, gear)
+
+# second input format just takes a vector
 vals(mtcars$gear)
 
 # with NAs
+vals(mice::boys, gen)
 vals(mice::boys$gen)
 }

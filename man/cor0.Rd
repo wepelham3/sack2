@@ -9,15 +9,15 @@ cor0(data, pattern = NULL)
 \arguments{
 \item{data}{Dataframe.}
 
-\item{pattern}{Optional vector of patterns to match (i.e., filter for) in the resulting
+\item{pattern}{Optional vector of patterns to match for (i.e., filter for) in the resulting
 two columns with variable names. Useful if only interested in correlations with a specific variable (e.g., the outcome).}
 }
 \description{
 Wraps typical workflow of \code{df \%>\% as.matrix() \%>\% Hmisc::rcorr() \%>\% broom::tidy()}.
 }
 \details{
-Drops all factors with more than 2 levels.  Converts factors with 2 levels to numerics
-via \code{as.numeric(x) - 1}.
+Drops all factors with more than 2 levels and throws a warning.
+Silently converts factors with 2 levels to numerics via \code{as.numeric(x) - 1}.
 }
 \examples{
 cor0(mtcars)
