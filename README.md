@@ -42,3 +42,4 @@ A collection of miscellaneous useful functions used across projects.
 ### Functions for working with SPSS `.sav` files:
 
 - `inspect_sav` to get metadata (e.g., variable labels) from a `.sav` file
+- `add_sav_labels` to add variable labels based on a `.sav` file or labelled R data
