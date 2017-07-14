@@ -26,10 +26,10 @@ inspect_sav = function(path.or.data, describe = FALSE) {
     }
 
     data = tibble::data_frame(name = names(labelled.data),
-                            label = sjmisc::get_label(labelled.data),
+                            label = sjlabelled::get_label(labelled.data),
                             mapping = "",
-                            values = lapply(labelled.data, sjmisc::get_values),
-                            value.labels = sjmisc::get_labels(labelled.data))
+                            values = lapply(labelled.data, sjlabelled::get_values),
+                            value.labels = sjlabelled::get_labels(labelled.data))
 
     # fill new column mapping values to value labels
     for (i in 1 : nrow(data)) {
