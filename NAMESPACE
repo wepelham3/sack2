@@ -3,6 +3,7 @@
 export(add_sav_labels)
 export(bp)
 export(cor0)
+export(count_NA_patterns)
 export(cross_table)
 export(describe_NA)
 export(describe_df)
