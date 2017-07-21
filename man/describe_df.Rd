@@ -4,10 +4,12 @@
 \alias{describe_df}
 \title{Return tidy summary of dataframe}
 \usage{
-describe_df(data)
+describe_df(data, digits = NULL)
 }
 \arguments{
 \item{data}{Dataframe.}
+
+\item{digits}{Optional argument to round output to a specified number of digits.}
 }
 \description{
 Function to return a dataframe with descriptives for a target dataframe.
@@ -18,6 +20,7 @@ Note that the count in the \code{distinct} column excludes values of \code{NA}.
 }
 \examples{
 describe_df(mtcars)
+describe_df(mtcars, 2)
 describe_df(mice::boys)
 
 # NAs are excluded from the count of 'distinct'
