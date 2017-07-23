@@ -43,7 +43,7 @@ inspect_sav = function(path.or.data, describe = FALSE) {
 
     if (describe == TRUE){
       data = data %>%
-        dplyr::left_join(describe_df(labelled.data) %>%
+        dplyr::left_join(sack2::describe_df(labelled.data) %>%
                            dplyr::rename(name = variable))
     }
 
