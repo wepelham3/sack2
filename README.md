@@ -10,6 +10,7 @@ A collection of miscellaneous useful functions used across projects.
 - `n_unique` to count number of unique values in a vector
 - `describe_df` to tidily summarize a dataframe
 - `describe_NA` to tidily summarize missing data
+- `count_NA_patterns` to return a count of each missingness pattern in data
 - `cor0` to tidily summarize pairwise correlations
 - `table0` to call `table()` with `NA`s included
 - `cross_table` to call `gmodels::CrossTable()` with all proportions suppressed
