@@ -22,12 +22,14 @@
 #**********************************************************
 cor0 = function(data, pattern = NULL) {
 
-  ncols.valid <- sum(purrr::map_dbl(data, ~ is.numeric(.x) | (is.factor(.x) & nlevels(.x) == 2)))
+  cols.to.drop <- purrr::discard(data, ~ is.numeric(.x) | (is.factor(.x) & nlevels(.x) == 2)) %>%
+    names()
 
-  ncols.dropped <- ncol(data) - ncols.valid
+  ncols.dropped <- length(cols.to.drop)
 
   if(ncols.dropped > 0) {
-    warning(paste0("Dropped ", ncols.dropped, " non-numeric columns with more than two values before computing correlations."))
+    warning(paste0("Dropped ", ncols.dropped, " non-numeric columns with more than two values before computing correlations:\n    ",
+                   paste0(cols.to.drop, collapse = ", ")))
   }
 
   data <- data %>%
