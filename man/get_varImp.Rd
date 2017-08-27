@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_varImp.R
 \name{get_varImp}
 \alias{get_varImp}
-\title{Get tidy variable importance information from model trained by \code{caret}}
+\title{Get tidy variable importance information from a \code{caret::train} object}
 \usage{
 get_varImp(trained.model)
 }
@@ -11,13 +11,11 @@ get_varImp(trained.model)
 }
 \description{
 Function to return a tidy dataframe with variable importance information
-from a model trained by \code{caret}.  Appends the algorithm and outcome information.
+from a model trained by \code{caret::train}.  Appends the algorithm and outcome information.
 }
 \details{
-Note that an error will be thrown if the method used does not permit a \code{varImp} call,
-that is, does not yield variable importance scores.  Currently shows a warning and returns
-an empty dataframe whenever the call to \code{caret::varImp()} returns an error (e.g.,
-if that algorithm has no variable importance metrics).
+Currently shows a warning and returns an empty dataframe whenever the call to
+\code{caret::varImp()} returns an error (e.g., if that algorithm has no variable importance metrics).
 
 Writing this as a function that tidily gets variable importance (rather than tidies variable
 importance returned by \code{varImp}) is necessary for the \code{mutate}+\code{map} paradigm,
