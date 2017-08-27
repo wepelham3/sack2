@@ -32,7 +32,8 @@ A collection of miscellaneous useful functions used across projects.
 
 - `tidy_MIcombine` to tidily pool analysis results when using `mitools`
 - `tidy_confusionMatrix` to tidy a confusion matrix from `caret`
-- `get_varImp` to get a tidy summary of variable importance from `caret`
+- `get_varImp` to get a tidy summary of variable importance from `caret::train`
+- `get_train_perf` to get a tidy summary of training performance from `caret::train`
 
 ### Functions for conducting multiple imputation in `mice`:
 
