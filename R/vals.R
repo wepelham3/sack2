@@ -11,9 +11,9 @@
 #'
 #' @param data Either a vector, or a dataframe in which to find \code{var}.
 #' @param var When \code{data} is a dataframe, bare name of column to use.
+#' @param digits Optional argument to round proportions to specific number of digits (default is 2).
 #' @export
 #' @examples
-#'
 #' # first input format uses a (df, name) specification like dplyr
 #' vals(mtcars, gear)
 #'
@@ -22,10 +22,12 @@
 #'
 #' # with NAs
 #' vals(mice::boys, gen)
-#' vals(mice::boys$gen)
+#'
+#' # with more decimals in proportions
+#' vals(mice::boys$gen, digits = 3)
 
 #**********************************************************
-vals = function(data, var = NULL) {
+vals = function(data, var = NULL, digits = 2) {
 
   if (is.data.frame(data)){
 
@@ -42,17 +44,28 @@ vals = function(data, var = NULL) {
     stop("Cannot understand inputs.")
   }
 
-  df = data.frame(value = unique(vector)) %>%
+  result <- data.frame(value = unique(vector)) %>%
     dplyr::mutate(count = ifelse(is.na(value),
                                  purrr::map_int(value, ~ sum(is.na(vector))),
                                  purrr::map_int(value, ~ sum(vector == .x, na.rm = TRUE))),
                   prop = count / length(vector)) %>%
     dplyr::arrange(value) %>%
-    dplyr::mutate(cum.prop = cumsum(prop)) %>%
-    # round, now that cum.prop has been computed
-    dplyr::mutate_at(.vars = c("prop", "cum.prop"),
-                     .funs = "round", 2)
+    dplyr::mutate(cumprop = cumsum(prop)) %>%
+    # round, now that cumprop has been computed
+    dplyr::mutate_at(.vars = c("prop", "cumprop"),
+                     .funs = "round", digits = digits) %>%
+    dplyr::select(value, count, prop, cumprop)
 
-  return(df)
+  if (sum(is.na(vector)) > 0) {
+    result <- result %>%
+      dplyr::mutate(prop.nonmissing = ifelse(is.na(value),
+                                             NA,
+                                             count / length(na.omit(vector))),
+                    cumprop.nonmissing = cumsum(prop.nonmissing)) %>%
+    # round, now that cumprop.nonmissing has been computed
+    dplyr::mutate_at(.vars = c("prop.nonmissing", "cumprop.nonmissing"),
+                     .funs = "round", digits = digits)
+  }
+  return(result)
 }
 #**********************************************************

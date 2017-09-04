@@ -4,12 +4,14 @@
 \alias{vals}
 \title{Create tidy dataframe that summarizes frequency of values in a vector}
 \usage{
-vals(data, var = NULL)
+vals(data, var = NULL, digits = 2)
 }
 \arguments{
 \item{data}{Either a vector, or a dataframe in which to find \code{var}.}
 
 \item{var}{When \code{data} is a dataframe, bare name of column to use.}
+
+\item{digits}{Optional argument to round proportions to specific number of digits (default is 2).}
 }
 \description{
 Akin to 1-dimensional \code{table} with a few differences:
@@ -23,7 +25,6 @@ Note that the \code{cum.prop} column in resulting dataframe was calculated after
 sorting based on value.  It will not remain correct if resorted.
 }
 \examples{
-
 # first input format uses a (df, name) specification like dplyr
 vals(mtcars, gear)
 
@@ -32,5 +33,7 @@ vals(mtcars$gear)
 
 # with NAs
 vals(mice::boys, gen)
-vals(mice::boys$gen)
+
+# with more decimals in proportions
+vals(mice::boys$gen, digits = 3)
 }
