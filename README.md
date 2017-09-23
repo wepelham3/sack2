@@ -28,6 +28,7 @@ A collection of miscellaneous useful functions used across projects.
 - `source_lines` to source specific lines in a file
 - `source_all` to source all files in a directory
 - `lprint` to print tibble with all its rows
+- `save_session_info` to save a `.txt` file with session info
 
 ### Functions to tidy (or tidily produce) things:
 
