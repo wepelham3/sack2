@@ -22,7 +22,7 @@ A collection of miscellaneous useful functions used across projects.
 ### Workflow functions:
 
 - `bp` to make a noise
-- `mk` to source the `MAKEFILE.R` in directory
+- `mk` to source the `RUNME.R` or `MAKEFILE.R` in directory
 - `notify_cell` to send a text to a cell phone
 - `fnr_wd` to find-and-replace in all files in a directory
 - `source_lines` to source specific lines in a file
