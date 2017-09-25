@@ -29,6 +29,7 @@ A collection of miscellaneous useful functions used across projects.
 - `source_all` to source all files in a directory
 - `lprint` to print tibble with all its rows
 - `save_session_info` to save a `.txt` file with session info
+- `load_png` to load a `.png` file into the graphics device
 
 ### Functions to tidy (or tidily produce) things:
 
