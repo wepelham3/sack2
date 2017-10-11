@@ -1,6 +1,6 @@
-#' Print all rows of a tibble
+#' Print tibble with all rows shown
 #'
-#' "Long print" to override standard tibble behavior.
+#' *L*ong *p*rint to override standard tibble behavior.
 #'
 #' Functionally, an alternative to \code{View}.
 #'
@@ -8,13 +8,13 @@
 #' @examples
 #' tibble <- tibble::as_tibble(mtcars)
 #'
-#' lprint(tibble)
+#' lp(tibble)
 #'
 #' # cf. suppression behavior
 #' print(tibble)
 
 #**********************************************************
-lprint = function(tibble) {
+lp = function(tibble) {
   print(tibble, n = 10000)
 }
 #**********************************************************

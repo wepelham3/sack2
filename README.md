@@ -28,7 +28,7 @@ A collection of miscellaneous useful functions used across projects.
 - `fnr_wd` to find-and-replace in all files in a directory
 - `source_lines` to source specific lines in a file
 - `source_all` to source all files in a directory
-- `lprint` to print tibble with all its rows
+- `lp` to print tibble with all rows shown
 - `save_session_info` to save a `.txt` file with session info
 - `load_png` to load a `.png` file into the graphics device
 
