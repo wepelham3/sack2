@@ -18,7 +18,8 @@ Akin to 1-dimensional \code{table} with a few differences:
 it returns as a dataframe,
 it always includes \code{NA}s,
 it includes the proportion of elements,
-it can take a \code{vals(df, var)} input format for easy chaining.
+it can take a \code{vals(df, var)} input format for easy chaining,
+it will include value labels when \code{sjlabelled::is_labelled}.
 }
 \details{
 Note that the \code{cum.prop} column in resulting dataframe was calculated after

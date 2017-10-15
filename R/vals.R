@@ -4,7 +4,8 @@
 #' it returns as a dataframe,
 #' it always includes \code{NA}s,
 #' it includes the proportion of elements,
-#' it can take a \code{vals(df, var)} input format for easy chaining.
+#' it can take a \code{vals(df, var)} input format for easy chaining,
+#' it will include value labels when \code{sjlabelled::is_labelled}.
 #'
 #' Note that the \code{cum.prop} column in resulting dataframe was calculated after
 #' sorting based on value.  It will not remain correct if resorted.
@@ -41,7 +42,7 @@ vals = function(data, var = NULL, digits = 2) {
     vector <- data
 
   } else {
-    stop("Cannot understand inputs.")
+    stop("Cannot parse inputs.")
   }
 
   result <- data.frame(value = unique(vector)) %>%
@@ -62,10 +63,24 @@ vals = function(data, var = NULL, digits = 2) {
                                              NA,
                                              count / length(na.omit(vector))),
                     cumprop.nonmissing = cumsum(prop.nonmissing)) %>%
-    # round, now that cumprop.nonmissing has been computed
-    dplyr::mutate_at(.vars = c("prop.nonmissing", "cumprop.nonmissing"),
-                     .funs = "round", digits = digits)
+      # round, now that cumprop.nonmissing has been computed
+      dplyr::mutate_at(.vars = c("prop.nonmissing", "cumprop.nonmissing"),
+                       .funs = "round", digits = digits)
   }
-  return(result)
+
+  if (sjlabelled::is_labelled(vector) == TRUE) {
+
+    labels <- sjlabelled::get_labels(vector, include.values = TRUE) %>%
+      broom::tidy() %>%
+      rename(value = names,
+             label = x) %>%
+      mutate(value = as.numeric(value)) # this is a potential source of bugs
+
+    result <- result %>%
+      left_join(labels) %>%
+      select(label, everything())
+  }
+
+  result
 }
 #**********************************************************
