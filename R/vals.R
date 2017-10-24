@@ -11,7 +11,7 @@
 #' sorting based on value.  It will not remain correct if resorted.
 #'
 #' @param data Either a vector, or a dataframe in which to find \code{var}.
-#' @param var When \code{data} is a dataframe, bare name of column to use.
+#' @param var When \code{data} is a dataframe, bare or quoted name of column to use.
 #' @param digits Optional argument to round proportions to specific number of digits (default is 2).
 #' @export
 #' @examples
@@ -32,10 +32,10 @@ vals = function(data, var = NULL, digits = 2) {
 
   if (is.data.frame(data)){
 
-    # otherwise may append the grouping variable(s) onto front of df
-    if (dplyr::is_grouped_df(data)) data <- dplyr::ungroup(data)
+    # this will do nothing if var is a string
+    var <- as.character(substitute(var))
 
-    vector <- dplyr::select(data, !!rlang::enquo(var)) %>% .[[1]]
+    vector <- data[[var]]
 
   } else if (is.null(var)){
 

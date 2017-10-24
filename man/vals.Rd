@@ -9,7 +9,7 @@ vals(data, var = NULL, digits = 2)
 \arguments{
 \item{data}{Either a vector, or a dataframe in which to find \code{var}.}
 
-\item{var}{When \code{data} is a dataframe, bare name of column to use.}
+\item{var}{When \code{data} is a dataframe, bare or quoted name of column to use.}
 
 \item{digits}{Optional argument to round proportions to specific number of digits (default is 2).}
 }
