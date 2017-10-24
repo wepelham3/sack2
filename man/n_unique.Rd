@@ -4,10 +4,12 @@
 \alias{n_unique}
 \title{Count unique values of vector}
 \usage{
-n_unique(vec)
+n_unique(data, var = NULL)
 }
 \arguments{
-\item{vector}{Vector.}
+\item{data}{Either a vector, or a dataframe in which to find \code{var}.}
+
+\item{var}{When \code{data} is a dataframe, bare or quoted name of column to use.}
 }
 \description{
 Function to count number of unique values in a vector. Includes \code{NA} as a value.
@@ -17,4 +19,13 @@ n_unique(c(0, 1))
 n_unique(c(0, 1, NA))
 n_unique(rnorm(10))
 n_unique(rbinom(10, 1, .5))
+
+# illustrate two formats of dataframe inputs
+
+df <- data.frame(x = c(0, 1, 2, NA),
+                 y = c(0, 0, 0, NA),
+                 group = c("yes", "no", "no", "yes"))
+
+n_unique(df, "x")
+n_unique(df, x)
 }
