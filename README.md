@@ -19,6 +19,7 @@ A collection of miscellaneous useful functions used across projects.
 - `pval_to_symbol` to convert numeric p values to corresponding significance symbols
 - `replace_NAs_with_medians` to replace `NA`s with medians throughout dataframe
 - `round0` to round all numeric columns in a dataframe
+- `fnr_names` to find and replace patterns in names of a dataframe
 
 ### Workflow functions:
 
