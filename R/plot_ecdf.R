@@ -30,8 +30,9 @@ plot_ecdf = function(data, var = NULL){
     stop("Cannot parse inputs.")
   }
 
-  ggplot2::ggplot(data = data.frame(x = vector), aes(x = x)) +
+  ggplot2::ggplot(data = data.frame(x = vector), ggplot2::aes(x = x)) +
     ggplot2::stat_ecdf() +
-    ggplot2::scale_y_continuous(breaks = seq(0, 1, by = 0.2))
+    ggplot2::scale_y_continuous(breaks = seq(0, 1, by = 0.2)) +
+    ggplot2::labs(y = "Cumulative proportion")
 }
 #**********************************************************
