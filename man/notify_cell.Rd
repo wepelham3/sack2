@@ -4,7 +4,7 @@
 \alias{notify_cell}
 \title{Send a text notification to cell phone}
 \usage{
-notify_cell(cell.number, text.content)
+notify_cell(cell.number, text.content = NULL)
 }
 \arguments{
 \item{cell.number}{10-digit phone number to contact, without hyphens or periods.}
@@ -13,9 +13,11 @@ notify_cell(cell.number, text.content)
 }
 \description{
 Send a text notification to cell phone.
-Only works with ATT carriers.
+Only works with AT&T carriers.
 Uses MMS in order to appear as coming from email address to recipient, rather than a new number every time.
 }
 \examples{
-notify_cell(8005555555, "The simulation is finished.")
+# non-operative
+# notify_cell(8005555555)
+# notify_cell(8005555555, "The simulation is finished on laptop.")
 }
