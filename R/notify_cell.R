@@ -18,7 +18,7 @@ notify_cell = function(cell.number, text.content = NULL) {
 
     dir <- basename(getwd())
 
-    text.content <- paste0("Activity stopped in {", dir, "}")
+    text.content <- paste0("Activity stopped in {", dir, "} on ", Sys.info()["nodename"])
 
   }
 
