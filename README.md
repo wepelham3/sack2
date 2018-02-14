@@ -24,6 +24,7 @@ A collection of miscellaneous useful functions used across projects.
 ### Workflow functions:
 
 - `set_up_new_repo` to create basic file structure to start new analysis
+- `clear_output_dir` to delete all files in `output/`
 - `bp` to make a noise
 - `mk` to source the `RUNME.R` or `MAKEFILE.R` in directory
 - `notify_cell` to send a text to a cell phone
