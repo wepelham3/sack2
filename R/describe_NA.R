@@ -9,8 +9,18 @@
 
 #**********************************************************
 describe_NA = function(data) {
-    tibble::data_frame(variable = names(data),
-                       count.NA = colSums(is.na(data)),
-                       prop.NA = colMeans(is.na(data)) %>% round(2))
+
+  count.NA <- colSums(is.na(data))
+
+  prop.NA <- round(colMeans(is.na(data)), 2)
+
+  names(count.NA) <- NULL
+  names(prop.NA) <- NULL
+
+  return(count.NA)
+  data.frame(variable = names(data),
+             count.NA,
+             prop.NA)
+
 }
 #**********************************************************
