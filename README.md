@@ -26,6 +26,7 @@ A collection of miscellaneous useful functions used across projects.
 - `set_up_new_repo` to create basic file structure to start new analysis
 - `clear_output_dir` to delete all files in `output/`
 - `bp` to make a noise
+- `tc` to write to the clipboard
 - `mk` to source the `RUNME.R` or `MAKEFILE.R` in directory
 - `notify_cell` to send a text to a cell phone
 - `fnr_wd` to find-and-replace in all files in a directory
