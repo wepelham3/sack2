@@ -17,7 +17,6 @@ describe_NA = function(data) {
   names(count.NA) <- NULL
   names(prop.NA) <- NULL
 
-  return(count.NA)
   data.frame(variable = names(data),
              count.NA,
              prop.NA)
