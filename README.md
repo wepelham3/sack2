@@ -35,6 +35,7 @@ A collection of miscellaneous useful functions used across projects.
 - `lp` to print tibble with all rows shown
 - `save_session_info` to save a `.txt` file with session info
 - `wpsave` to save `ggplot` as both `.png` and `.pdf` and load in viewer
+- `write_wp` to save dataframe as both `.csv` and `.xlsx`
 
 ### Functions to tidy (or tidily produce) things:
 

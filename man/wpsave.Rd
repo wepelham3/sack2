@@ -2,12 +2,13 @@
 % Please edit documentation in R/wpsave.R
 \name{wpsave}
 \alias{wpsave}
-\title{ggsave() wrapper that saves as .png+.pdf then loads to viewer}
+\title{Wrap ggsave() to save as .png & .pdf, then load to viewer}
 \usage{
 wpsave(.path, .height, .width)
 }
 \arguments{
-\item{.path}{Path at which to save file}
+\item{.path}{Path at which to save file. Note that extension
+(e.g., \codes{.pdf}) should not be included.}
 
 \item{.height}{Height in inches}
 

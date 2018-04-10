@@ -1,9 +1,10 @@
-#' ggsave() wrapper that saves as .png+.pdf then loads to viewer
+#' Wrap ggsave() to save as .png & .pdf, then load to viewer
 #'
 #' Wraps \code{ggsave()}, but saves plot as both \code{.pdf}
 #' and \code{.png}, then loads plot to viewer.
 #'
-#' @param .path Path at which to save file
+#' @param .path Path at which to save file. Note that extension
+#' (e.g., \codes{.pdf}) should not be included.
 #' @param .height Height in inches
 #' @param .width Width in inches
 #' @export
