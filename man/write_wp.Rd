@@ -4,18 +4,18 @@
 \alias{write_wp}
 \title{Save dataframe as both .csv and .xlsx}
 \usage{
-write_wp(.data, .path)
+write_wp(data, path)
 }
 \arguments{
-\item{.data}{Dataframe to write to disk.}
+\item{data}{Dataframe to write to disk.}
 
-\item{.path}{Path at which to save file. Note that extension
-(e.g., \codes{.pdf}) should not be included.}
+\item{path}{Path at which to save file. Note that if file extension is
+specified, it will be stripped.}
 }
 \description{
 Convenience function to save a dataframe as both \code{.csv}
 and \code{.xlsx}. Useful when working with others who prefer \code{.xlsx}.
 }
 \examples{
-write_wp()
+write_wp(mtcars, "data.csv")
 }

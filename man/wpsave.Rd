@@ -4,21 +4,23 @@
 \alias{wpsave}
 \title{Wrap ggsave() to save as .png & .pdf, then load to viewer}
 \usage{
-wpsave(.path, .height, .width)
+wpsave(path, height, width)
 }
 \arguments{
-\item{.path}{Path at which to save file. Note that extension
-(e.g., \codes{.pdf}) should not be included.}
+\item{path}{Path at which to save file. Note that if file extension is
+specified, it will be stripped.}
 
-\item{.height}{Height in inches}
+\item{height}{Height in inches.}
 
-\item{.width}{Width in inches}
+\item{width}{Width in inches.}
 }
 \description{
 Wraps \code{ggsave()}, but saves plot as both \code{.pdf}
 and \code{.png}, then loads plot to viewer.
 }
 \examples{
-# not run
-# wpsave("output/figure1", .height = 4, .width = 4, )
+# not run; all three will produce same output
+# wpsave("output/figure1", height = 4, width = 4)
+# wpsave("output/figure1.pdf", height = 4, width = 4)
+# wpsave("output/figure1.png", height = 4, width = 4)
 }
