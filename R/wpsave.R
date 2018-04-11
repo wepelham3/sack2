@@ -3,27 +3,37 @@
 #' Wraps \code{ggsave()}, but saves plot as both \code{.pdf}
 #' and \code{.png}, then loads plot to viewer.
 #'
-#' @param .path Path at which to save file. Note that extension
-#' (e.g., \codes{.pdf}) should not be included.
-#' @param .height Height in inches
-#' @param .width Width in inches
+#' @param path Path at which to save file. Note that if file extension is
+#' specified, it will be stripped.
+#' @param height Height in inches.
+#' @param width Width in inches.
 #' @export
 #' @examples
-#' # not run
-#' # wpsave("output/figure1", .height = 4, .width = 4, )
+#' # not run; all three will produce same output
+#' # wpsave("output/figure1", height = 4, width = 4)
+#' # wpsave("output/figure1.pdf", height = 4, width = 4)
+#' # wpsave("output/figure1.png", height = 4, width = 4)
 
 #**********************************************************
-wpsave = function(.path, .height, .width){
+wpsave = function(path, height, width){
 
-  ggsave(filename = paste0(.path, ".pdf"),
-         width = .width, height = .height)
+  pattern <- "\\.pdf$|\\.png$"
 
-  ggsave(filename = paste0(.path, ".png"),
-         width = .width, height = .height)
+  if (grepl(pattern, x = path)){
+    warning("Stripped file extension from path argument.")
+  }
+
+  path <- gsub(pattern, "", x = path)
+
+  ggsave(filename = paste0(path, ".pdf"),
+         width = width, height = height)
+
+  ggsave(filename = paste0(path, ".png"),
+         width = width, height = height)
 
   print(ggplot2::ggplot())
 
-  png <- png::readPNG(paste0(.path, ".png"))
+  png <- png::readPNG(paste0(path, ".png"))
 
   grid::grid.raster(png)
 }
