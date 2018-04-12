@@ -15,26 +15,54 @@
 #**********************************************************
 plot_mice_distrib = function(mids.object, vars) {
 
+  nobs <- nrow(mids.object$data)
+
     for (i in 1:length(vars)) {
-        if (mids.object$nmis[[vars[[i]]]] == 0) next
-            else if (mids.object$method[[vars[[i]]]] == "logreg") {
-                plot_mice_distrib_binary(mids.object, vars[[i]]) %>%
+
+      varname <- vars[[i]]
+
+      method <- mids.object$method[[varname]]
+
+      nmis <- mids.object$nmis[[varname]]
+
+      npres <- nobs - nmis
+
+      title <- paste0(varname,
+                      "\n[nmis = ", nmis, ", ",
+                      "npres = ", npres, "]")
+
+        if (nmis == 0) next
+
+            else if (method == "logreg") {
+
+                plot_mice_distrib_binary(mids.object, varname) %>%
                     print()
-            } else if (mids.object$method[[vars[[i]]]] %in% c("polr", "polyreg")) {
+
+            } else if (method %in% c("polr", "polyreg")) {
+
                 # don't send this to print() because it already calls print in the function
-                plot_mice_distrib_poly(mids.object, vars[[i]])
+                plot_mice_distrib_poly(mids.object, varname)
+
             } else {
+
                 lattice::bwplot(mids.object,
-                                as.formula(paste(vars[[i]], "~ .imp")),
-                                main = paste0(vars[[i]], "\n[nmis = ", mids.object$nmis[[vars[[i]]]], "]")) %>%
+                                as.formula(paste(varname, "~ .imp")),
+                                main = title) %>%
                     print()
-                if (mids.object$nmis[[vars[[i]]]] > 1) {
+
+                if (nmis > 1) {
+
                     lattice::densityplot(mids.object,
-                                         as.formula(paste(".imp ~", vars[[i]])),
-                                         main = paste0(vars[[i]], "\n[nmis = ", mids.object$nmis[[vars[[i]]]], "]")) %>%
+                                         as.formula(paste(".imp ~", varname)),
+                                         main = title) %>%
                         print()
                 }
             }
     }
 }
 #**********************************************************
+
+library(mice)
+boys2 <- cbind(boys, dummy = rbinom(nrow(boys), 1, .5))
+df.imp <- mice(boys2, method = c("pmm", "pmm", "pmm", "pmm", "pmm", "pmm", "polr", "pmm", "pmm", "logreg"))
+plot_mice_distrib(df.imp, c("hgt", "dummy", "phb"))
