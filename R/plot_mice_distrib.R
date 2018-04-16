@@ -6,7 +6,7 @@
 #' @param varlist Character vector of names of variables to plot.
 #' @export
 #' @examples
-#' boys2 <- cbind(boys, dummy = c(NA, NA, NA, rbinom(nrow(boys) - 3, 1, .5))
+#' boys2 <- cbind(boys, dummy = c(NA, NA, NA, rbinom(nrow(boys) - 3, 1, .5)))
 #' mice <- mice(boys2, method = c("pmm", "pmm", "pmm", "pmm", "pmm", "pmm", "polr", "pmm", "pmm", "logreg"))
 #' plot_mice_distrib(mice, c("hgt", "dummy", "phb"))
 
