@@ -47,9 +47,10 @@ A collection of miscellaneous useful functions used across projects.
 ### Functions for conducting multiple imputation in `mice`:
 
 - `inspect_pred.matrix` to check the pattern of which variables predict which in `mice` model
-- `fit_mice_for_diag` to iteratively find a number of iterations that results in `Rhat` < .05
-- `plot_mice_convergence` to produce convergence plots for `mice`
-- `plot_mice_distrib` to produce raw vs. imputed distribution plots for `mice`
+- `fit_mice_for_diag` to iteratively find # iterations in `mice` model necessary to get `Rhat` < .05
+- `plot_mice_convergence` to produce convergence plots for `mice` model
+- `plot_mice_distrib` to produce raw vs. imputed distribution plots for `mice` model
+- `compare_mice_distrib` to compare descriptives on raw vs. imputed distributions for `mice` model
 
 ### Functions for working with SPSS `.sav` files:
 
