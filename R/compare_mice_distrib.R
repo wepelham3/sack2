@@ -22,7 +22,7 @@ compare_mice_distrib = function(mice){
 
   summary.imp <- imp %>%
     purrr::map(~ purrr::reduce(.x, c)) %>%
-    purrr::map(sack2::describe_vec) %>%
+    purrr::map(sack2::describe) %>%
     dplyr::bind_rows() %>%
     dplyr::rename(n.values = n) %>%
     dplyr::mutate(n.cases = n.values / mice$m,
