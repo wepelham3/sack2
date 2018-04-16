@@ -14,6 +14,7 @@ describe_df(data, digits = NULL)
 \description{
 Function to return a dataframe with descriptives for a target dataframe.
 Each row in the returned dataframe will correspond to a column in the original dataframe.
+Respects grouped dataframes a la \code{dplyr}.
 }
 \details{
 Note that the count in the \code{distinct} column excludes values of \code{NA}.

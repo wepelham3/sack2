@@ -4,16 +4,19 @@
 \alias{cor0}
 \title{Create tidy summary of pairwise correlations of vars in a dataframe}
 \usage{
-cor0(data, pattern = NULL)
+cor0(.data, pattern = NULL)
 }
 \arguments{
-\item{data}{Dataframe.}
+\item{.data}{Dataframe.}
 
-\item{pattern}{Optional vector of patterns to match for (i.e., filter for) in the resulting
-two columns with variable names. Useful if only interested in correlations with a specific variable (e.g., the outcome).}
+\item{pattern}{Optional vector of patterns to match for (i.e., filter for) in
+the resulting two columns with variable names. Useful if only interested in
+correlations with a specific variable (e.g., the outcome).}
 }
 \description{
-Wraps typical workflow of \code{df \%>\% as.matrix() \%>\% Hmisc::rcorr() \%>\% broom::tidy()}.
+Wraps typical workflow of
+\code{df \%>\% as.matrix() \%>\% Hmisc::rcorr() \%>\% broom::tidy()}.
+Respects grouped dataframes a la \code{dplyr}.
 }
 \details{
 Drops all factors with more than 2 levels and throws a warning.
