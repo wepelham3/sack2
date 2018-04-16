@@ -9,7 +9,7 @@ A collection of miscellaneous useful functions used across projects.
 - `vals` to summarize frequency of values in a vector
 - `n_unique` to count number of unique values in a vector
 - `%notin%` to test whether an element is NOT in a set
-- `describe_vec` to tidily summarize a vector
+- `describe` to tidily summarize a vector
 - `describe_df` to tidily summarize a dataframe
 - `describe_NA` to tidily summarize missing data
 - `count_NA_patterns` to return a count of each missingness pattern in data

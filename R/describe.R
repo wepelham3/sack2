@@ -1,6 +1,6 @@
 #' Return tidy summary of vector
 #'
-#' Function to return a dataframe with descriptives for a target vector
+#' Function to return a one-row dataframe with descriptives for a target vector
 #' Mirrors \code{describe_df}, but for standalone vectors.
 #'
 #' Note that the count in the \code{distinct} column excludes values of \code{NA}.
@@ -9,21 +9,23 @@
 #' @param digits Optional argument to round output to a specified number of digits.
 #' @export
 #' @examples
-#' describe_vec(mtcars$mpg)
-#' describe_vec(mtcars$mpg, 2)
-#' describe_vec(mice::boys$hc)
+#' describe(mtcars$mpg)
+#' describe(mtcars$mpg, 2)
+#' describe(mice::boys$hc)
 #'
 #' # handling of a factor
-#' describe_vec(mice::boys$gen)
+#' describe(mice::boys$gen)
 #'
 #' # NAs are excluded from the count of 'distinct'
-#' describe_vec(c(0, 1, 1, 0, NA))
+#' describe(c(0, 1, 1, 0, NA))
 #'
 #' # a common use case, distinct from describe_df()
-#' describe_vec(mtcars$hp / mtcars$wt)
+#' describe(mtcars$hp / mtcars$wt)
 
 #**********************************************************
-describe_vec = function(x, digits = NULL) {
+describe = function(x, digits = NULL) {
+
+  if ( ! is.vector(x)) stop("First argument is not a vector.")
 
   n <- sum(!is.na(x))
   nmis <- sum(is.na(x))
@@ -53,6 +55,6 @@ describe_vec = function(x, digits = NULL) {
 
   rownames(results) <- c() # inherits rownames from the quantile() calls
 
-  return(results)
+  results
 }
 #**********************************************************
