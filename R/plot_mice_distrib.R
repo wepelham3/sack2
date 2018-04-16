@@ -35,6 +35,10 @@ plot_mice_distrib = function(mice, varlist){
 
   plot_variable = function(varname){
 
+    if (! varname %in% names(mice$nmis)){
+      stop("Variable(s) in varlist not found in mice object.")
+    }
+
     nmis <- mice$nmis[varname]
 
     if (nmis == 0) return()
