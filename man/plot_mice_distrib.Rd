@@ -4,20 +4,18 @@
 \alias{plot_mice_distrib}
 \title{Plot imputed vs. raw data for \code{mice} model}
 \usage{
-plot_mice_distrib(mids.object, vars)
+plot_mice_distrib(mice, varlist)
 }
 \arguments{
-\item{mids.object}{\code{mids} object containing variables to plot.}
+\item{mice}{\code{mids} object containing variables to plot.}
 
-\item{vars}{Character vector of names of variables to plot.}
+\item{varlist}{Character vector of names of variables to plot.}
 }
 \description{
-Will use the \code{mice} plotting methods for continuous variables,
-and the \code{sack2} custom plotting methods for categorical variables
-(as indicated by the imputation method used).
+Chooses the type of plot based on \code{method} used for each variable.
 }
 \examples{
-boys2 <- cbind(boys, dummy = rbinom(nrow(boys), 1, .5))
-df.imp <- mice(boys2, method = c("pmm", "pmm", "pmm", "pmm", "pmm", "pmm", "polr", "pmm", "pmm", "logreg"))
-plot_mice_distrib(df.imp, c("hgt", "dummy", "phb"))
+boys2 <- cbind(boys, dummy = c(NA, NA, NA, rbinom(nrow(boys) - 3, 1, .5))
+mice <- mice(boys2, method = c("pmm", "pmm", "pmm", "pmm", "pmm", "pmm", "polr", "pmm", "pmm", "logreg"))
+plot_mice_distrib(mice, c("hgt", "dummy", "phb"))
 }
