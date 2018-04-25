@@ -3,7 +3,8 @@
 #' Function to return a one-row dataframe with descriptives for a target vector
 #' Mirrors \code{describe_df}, but for standalone vectors.
 #'
-#' Note that the count in the \code{distinct} column excludes values of \code{NA}.
+#' Will coerce using \code{as.vector()} to handle factors or labelled vectors.
+#' Count in the \code{distinct} column excludes values of \code{NA}.
 #'
 #' @param x Vector.
 #' @param digits Optional argument to round output to a specified number of digits.
@@ -25,7 +26,9 @@
 #**********************************************************
 describe = function(x, digits = NULL) {
 
-  if ( ! is.vector(x)) stop("First argument is not a vector.")
+  x <- as.vector(x)
+
+  if ( ! is.vector(x)) stop("First argument could not be coerced to a vector.")
 
   n <- sum(!is.na(x))
   nmis <- sum(is.na(x))

@@ -16,7 +16,8 @@ Function to return a one-row dataframe with descriptives for a target vector
 Mirrors \code{describe_df}, but for standalone vectors.
 }
 \details{
-Note that the count in the \code{distinct} column excludes values of \code{NA}.
+Will coerce using \code{as.vector()} to handle factors or labelled vectors.
+Count in the \code{distinct} column excludes values of \code{NA}.
 }
 \examples{
 describe(mtcars$mpg)
