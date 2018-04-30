@@ -24,37 +24,36 @@
 #' df.imp.m5$iteration
 
 #**********************************************************
-fit_mice_for_diag = function(..., iter10 = FALSE) {
+fit_mice_for_diag = function (..., iter10 = FALSE){
 
-    # start with 10 iterations
-    current.maxit <- 10
-    # initialize max.rhat above threshold of 1.05
-    current.max.rhat <- 2
+  current.maxit <- 10
 
-    while (current.max.rhat > 1.05) {
-        data.imp <- mice::mice(seed = 07191992, m = 5, maxit = current.maxit,
-                               printFlag = FALSE, diagnostics = TRUE, ...)
+  current.max.rhat <- 999
 
-        # stop running if iter10 switch is on
-        if (iter10 == TRUE) return(data.imp)
+  while (current.max.rhat > 1.05) {
 
-        # if not, continue with statistical checks (Gelman/Rubin)
-        current.max.rhat <- miceadds::Rhat.mice(data.imp) %>%
-            dplyr::select(Rhat.M.imp, Rhat.Var.imp) %>%
-            purrr::map_dbl(max, na.rm = TRUE) %>%
-            max()
+    .mice <- mice::mice(seed = 7191992, m = 5, maxit = current.maxit,
+                        printFlag = FALSE, diagnostics = TRUE, ...)
 
-        current.maxit <- current.maxit + 5
-    }
+    if (iter10 == TRUE) return(.mice)
+
+    current.max.rhat <- miceadds::Rhat.mice(.mice) %>%
+      dplyr::select(Rhat.M.imp, Rhat.Var.imp) %>%
+      purrr::map_dbl(max, na.rm = TRUE) %>%
+      max()
+
+    current.maxit <- current.maxit + 5
 
     cat("----------------------------------")
     cat("\n")
-    cat(paste0("Final number of maxiter was... ", current.maxit - 5))
+    cat(paste0("Finished running maxiter of ...", current.maxit))
     cat("\n")
-    cat(paste0("This yielded a max(Rhat) of... ", current.max.rhat))
+    cat(paste0("This yielded a max(Rhat) of... ", round(current.max.rhat, 2)))
     cat("\n")
     cat("----------------------------------")
+    cat("\n")
+  }
 
-    return(data.imp)
+  .mice
 }
 #**********************************************************
