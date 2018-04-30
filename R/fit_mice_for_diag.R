@@ -42,8 +42,6 @@ fit_mice_for_diag = function (..., iter10 = FALSE){
       purrr::map_dbl(max, na.rm = TRUE) %>%
       max()
 
-    current.maxit <- current.maxit + 5
-
     cat("----------------------------------")
     cat("\n")
     cat(paste0("Finished running maxiter of ...", current.maxit))
@@ -52,6 +50,8 @@ fit_mice_for_diag = function (..., iter10 = FALSE){
     cat("\n")
     cat("----------------------------------")
     cat("\n")
+
+    current.maxit <- current.maxit + 5
   }
 
   .mice
