@@ -7,11 +7,13 @@
 fit_mice_for_diag(..., iter10 = FALSE)
 }
 \arguments{
-\item{...}{Arguments to be passed to \code{mice} call (typically, dataframe, method vector, and prediction matrix).}
+\item{...}{Arguments to be passed to \code{mice} call (typically, dataframe,
+method vector, and prediction matrix).}
 
-\item{iter10}{Logical switch indicating whether function should use the iterative procedure
-to find a sufficient number of iterations. When \code{TRUE}, will stop after fitting a \code{m = 5, maxit = 10} model. Included for convenience when working with code
-that includes the function.}
+\item{iter10}{Logical switch indicating whether function should use the
+iterative procedure to find a sufficient number of iterations. When
+\code{TRUE}, will stop after fitting a \code{m = 5, maxit = 10} model.
+Included for convenience when working with code that includes the function.}
 }
 \description{
 Function that creates a \code{mice} object for diagnostics, with
@@ -22,14 +24,17 @@ will give the value of \code{maxit} to be used in the final \code{m > 5}
 imputation model.
 }
 \details{
-See \code{mice::mice} for more documentation of arguments.
+Always uses same random seed. Includes a dataframe with all Rhat values at
+each step, which can be accessessed via \code{mice$rhat}. See \code{mice::mice}
+for more documentation of arguments.
 }
 \examples{
 library(mice)
 pred.matrix <- quickpred(boys, mincor = .10, minpuc = 0.50)
-df.imp.m5 <- fit_mice_for_diag(data = boys,
-                               predictorMatrix = pred.matrix,
-                               method = c("pmm", "pmm", "pmm", "pmm", "pmm", "pmm", "polr", "pmm", "pmm"))
-df.imp.m5$m
-df.imp.m5$iteration
+mice.m5 <- fit_mice_for_diag(data = boys,
+                             predictorMatrix = pred.matrix,
+                             method = c("pmm"))
+mice.m5$m
+mice.m5$iteration
+mice.m5$rhat
 }
