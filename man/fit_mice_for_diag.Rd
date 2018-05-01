@@ -4,7 +4,7 @@
 \alias{fit_mice_for_diag}
 \title{Create a \code{mice} object for diagnostics}
 \usage{
-fit_mice_for_diag(..., iter10 = FALSE)
+fit_mice_for_diag(..., iter10 = FALSE, Rhat.threshold = 1.1)
 }
 \arguments{
 \item{...}{Arguments to be passed to \code{mice} call (typically, dataframe,
@@ -18,7 +18,7 @@ Included for convenience when working with code that includes the function.}
 \description{
 Function that creates a \code{mice} object for diagnostics, with
 \code{m = 5}. Iteratively increases the number of iterations by 5 until
-Rhat < 1.05 for mean and variance of all variables in imputation model.
+Rhat < \code{Rhat.threshold} for mean and variance of all variables in imputation model.
 Thus, accessing \code{$iteration} in the resulting \code{mice} object
 will give the value of \code{maxit} to be used in the final \code{m > 5}
 imputation model.

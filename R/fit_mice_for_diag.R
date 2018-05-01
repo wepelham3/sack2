@@ -2,7 +2,7 @@
 #'
 #' Function that creates a \code{mice} object for diagnostics, with
 #' \code{m = 5}. Iteratively increases the number of iterations by 5 until
-#' Rhat < 1.05 for mean and variance of all variables in imputation model.
+#' Rhat < \code{Rhat.threshold} for mean and variance of all variables in imputation model.
 #' Thus, accessing \code{$iteration} in the resulting \code{mice} object
 #' will give the value of \code{maxit} to be used in the final \code{m > 5}
 #' imputation model.
@@ -29,7 +29,7 @@
 #' mice.m5$rhat
 
 #**********************************************************
-fit_mice_for_diag = function (..., iter10 = FALSE){
+fit_mice_for_diag = function (..., iter10 = FALSE, Rhat.threshold = 1.10){
 
   current.maxit <- 10
 
@@ -37,7 +37,7 @@ fit_mice_for_diag = function (..., iter10 = FALSE){
 
   df.Rhats <- tibble::data_frame()
 
-  while (current.max.Rhat > 1.05) {
+  while (current.max.Rhat > Rhat.threshold) {
 
     .mice <- mice::mice(seed = 7191992, m = 5, maxit = current.maxit,
                         printFlag = FALSE, diagnostics = TRUE, ...)
