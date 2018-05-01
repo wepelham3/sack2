@@ -17,6 +17,9 @@
 #' iterative procedure to find a sufficient number of iterations. When
 #' \code{TRUE}, will stop after fitting a \code{m = 5, maxit = 10} model.
 #' Included for convenience when working with code that includes the function.
+#' @param Rhat.threshold Maximum acceptable R-hat statistic
+#' @param final.maxit Number of iterations after which search should stop, regardless
+#' of whether Rhat threshold has been met.
 #' @export
 #' @examples
 #' library(mice)
@@ -29,7 +32,8 @@
 #' mice.m5$rhat
 
 #**********************************************************
-fit_mice_for_diag = function (..., iter10 = FALSE, Rhat.threshold = 1.10){
+fit_mice_for_diag = function (..., iter10 = FALSE,
+                              Rhat.threshold = 1.10, final.maxit = 100){
 
   current.maxit <- 10
 
@@ -63,6 +67,8 @@ fit_mice_for_diag = function (..., iter10 = FALSE, Rhat.threshold = 1.10){
 
     df.Rhats <- df.Rhats %>%
       dplyr::bind_rows(Rhats)
+
+    if (current.maxit >= final.maxit) break
 
     current.maxit <- current.maxit + 5
   }

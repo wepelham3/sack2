@@ -4,7 +4,8 @@
 \alias{fit_mice_for_diag}
 \title{Create a \code{mice} object for diagnostics}
 \usage{
-fit_mice_for_diag(..., iter10 = FALSE, Rhat.threshold = 1.1)
+fit_mice_for_diag(..., iter10 = FALSE, Rhat.threshold = 1.1,
+  final.maxit = 100)
 }
 \arguments{
 \item{...}{Arguments to be passed to \code{mice} call (typically, dataframe,
@@ -14,6 +15,11 @@ method vector, and prediction matrix).}
 iterative procedure to find a sufficient number of iterations. When
 \code{TRUE}, will stop after fitting a \code{m = 5, maxit = 10} model.
 Included for convenience when working with code that includes the function.}
+
+\item{Rhat.threshold}{Maximum acceptable R-hat statistic}
+
+\item{final.maxit}{Number of iterations after which search should stop, regardless
+of whether Rhat threshold has been met.}
 }
 \description{
 Function that creates a \code{mice} object for diagnostics, with
