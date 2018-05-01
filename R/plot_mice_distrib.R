@@ -67,6 +67,7 @@ plot_mice_distrib = function(mice, varlist){
       # make point plot for binary X
 
       .df.plot.binary <- .df.plot %>%
+        dplyr::mutate(y = as.numeric(as.character(y))) %>%
         dplyr::group_by(.imp, source) %>%
         dplyr::summarise(y = mean(y)) %>%
         dplyr::ungroup()
