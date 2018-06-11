@@ -35,8 +35,8 @@ describe_df = function(data, digits = NULL) {
 
   # recode any binary factors to 0/1 numerics
 
-  cols.to.binarize <- keep(data,
-                           ~ is.factor(.x) & nlevels(.x) == 2) %>%
+  cols.to.binarize <- purrr::keep(data,
+                                  ~ is.factor(.x) & nlevels(.x) == 2) %>%
     names() %>%
     setdiff(.groups)
 
@@ -44,8 +44,12 @@ describe_df = function(data, digits = NULL) {
     dplyr::mutate_at(cols.to.binarize,
                      ~ as.numeric(.x) - 1)
 
-  warning("describe_df binarized the following vars: ",
-          paste0(cols.to.binarize, collapse = ", "))
+  if (length(cols.to.binarize > 0)){
+
+    warning("describe_df binarized the following vars: ",
+            paste0(cols.to.binarize, collapse = ", "))
+
+  }
 
   # define internal function that summarizes a given dataframe
 
