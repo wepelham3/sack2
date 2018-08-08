@@ -6,6 +6,9 @@
 \usage{
 x \%notin\% table
 }
+\description{
+Test whether an element is NOT in a set
+}
 \examples{
 6 \%in\% c(6, 8, 10)
 ! 6 \%in\% c(6, 8, 10)

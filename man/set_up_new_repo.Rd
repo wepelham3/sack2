@@ -8,7 +8,7 @@ set_up_new_repo()
 }
 \description{
 Creates \code{data/} and \code{output/} folders, plus \code{README.md},
-\code{RUNME.R}, and \code{01-build-dataset.R}.
+\code{RUNME.R}, and metadata and data build scripts.
 }
 \examples{
 set_up_new_repo()

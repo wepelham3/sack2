@@ -2,7 +2,6 @@
 % Please edit documentation in R/make.R, R/mk.R
 \name{mk}
 \alias{mk}
-\alias{mk}
 \title{Source \code{MAKEFILE.R}}
 \usage{
 mk()

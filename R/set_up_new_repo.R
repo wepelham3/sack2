@@ -1,7 +1,7 @@
 #' Set up basic file structure for new repo
 #'
 #' Creates \code{data/} and \code{output/} folders, plus \code{README.md},
-#' \code{RUNME.R}, and \code{01-build-dataset.R}.
+#' \code{RUNME.R}, and metadata and data build scripts.
 #'
 #' @export
 #' @examples
@@ -15,7 +15,8 @@ set_up_new_repo = function() {
   # README may exist from initializing on Github
   if (! file.exists("README.md")) file.create("README.md")
 
-  file.create("01-build-dataset.R")
+  file.create("01-define-metadata.R")
+  file.create("02-build-datasets.R")
 
   dir.create("data")
 

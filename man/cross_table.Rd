@@ -5,10 +5,11 @@
 \title{Version of \code{gmodels::CrossTable} with better defaults}
 \usage{
 cross_table(x, y, digits = 3, max.width = 5, expected = FALSE,
-  prop.r = FALSE, prop.c = FALSE, prop.t = FALSE, prop.chisq = FALSE,
-  chisq = FALSE, fisher = FALSE, mcnemar = FALSE, resid = FALSE,
-  sresid = FALSE, asresid = FALSE, missing.include = FALSE,
-  format = c("SAS", "SPSS"), dnn = NULL, ...)
+  prop.r = FALSE, prop.c = FALSE, prop.t = FALSE,
+  prop.chisq = FALSE, chisq = FALSE, fisher = FALSE,
+  mcnemar = FALSE, resid = FALSE, sresid = FALSE, asresid = FALSE,
+  missing.include = FALSE, format = c("SAS", "SPSS"), dnn = NULL,
+  ...)
 }
 \description{
 Defaults to not including any of the proportions that clutter the table.
