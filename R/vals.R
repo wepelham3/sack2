@@ -70,10 +70,9 @@ vals = function(data, var = NULL, digits = 2) {
 
   if (sjlabelled::is_labelled(vector) == TRUE) {
 
-    labels <- sjlabelled::get_labels(vector, include.values = TRUE) %>%
-      broom::tidy() %>%
-      rename(value = names,
-             label = x) %>%
+    labels <- sjlabelled::get_labels(vector, values = "as.name") %>%
+      tibble::enframe(name = "value",
+                      value = "label") %>%
       mutate(value = as.numeric(value)) # this is a potential source of bugs
 
     result <- result %>%
