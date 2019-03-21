@@ -4,10 +4,10 @@
 \alias{plot_mice_convergence}
 \title{Plot imputation convergence for \code{mice} model}
 \usage{
-plot_mice_convergence(mids.object, vars)
+plot_mice_convergence(mids, vars)
 }
 \arguments{
-\item{mids.object}{\code{mids} object containing variables to plot.}
+\item{mids}{result of call to \code{mice()}.}
 
 \item{vars}{Character vector of names of variables to plot.}
 }

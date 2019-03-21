@@ -4,12 +4,12 @@
 \alias{plot_mice_distrib}
 \title{Plot imputed vs. raw data for \code{mice} model}
 \usage{
-plot_mice_distrib(mice, varlist)
+plot_mice_distrib(mids, vars)
 }
 \arguments{
-\item{mice}{\code{mids} object containing variables to plot.}
+\item{mids}{mids result of call to \code{mice()}.}
 
-\item{varlist}{Character vector of names of variables to plot.}
+\item{vars}{Character vector of names of variables to plot.}
 }
 \description{
 Chooses the type of plot based on \code{method} used for each variable.

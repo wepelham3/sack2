@@ -2,8 +2,8 @@
 #'
 #' Chooses the type of plot based on \code{method} used for each variable.
 #'
-#' @param mice \code{mids} object containing variables to plot.
-#' @param varlist Character vector of names of variables to plot.
+#' @param mids mids result of call to \code{mice()}.
+#' @param vars Character vector of names of variables to plot.
 #' @export
 #' @examples
 #' boys2 <- cbind(boys, dummy = c(NA, NA, NA, rbinom(nrow(boys) - 3, 1, .5)))
@@ -11,13 +11,13 @@
 #' plot_mice_distrib(mice, c("hgt", "dummy", "phb"))
 
 #**********************************************************
-plot_mice_distrib = function(mice, varlist){
+plot_mice_distrib = function(mids, vars){
 
-  if (is.mids(mice) == FALSE) stop("First argument is not a mids object.")
+  if (is.mids(mids) == FALSE) stop("First argument is not a mids object.")
 
-  # get metadata applicable to all variables in varlist
+  # get metadata applicable to all variables in vars
 
-  data <- mice$data
+  data <- mids$data
 
   nobs <- nrow(data)
 
@@ -35,17 +35,17 @@ plot_mice_distrib = function(mice, varlist){
 
   plot_variable = function(varname){
 
-    if (! varname %in% names(mice$nmis)){
-      stop("Variable(s) in varlist not found in mice object.")
+    if (! varname %in% names(mids$nmis)){
+      stop("Variable(s) in vars not found in mids object.")
     }
 
-    nmis <- mice$nmis[varname]
+    nmis <- mids$nmis[varname]
 
     if (nmis == 0) return()
 
     npres <- nobs - nmis
 
-    method <- mice$method[varname]
+    method <- mids$method[varname]
 
     subtitle <- paste0("[npres = ", npres, ", ",
                        "nmis = ", nmis, "]")
@@ -56,7 +56,7 @@ plot_mice_distrib = function(mice, varlist){
                           y = data[, varname]) %>%
       dplyr::filter(!is.na(y))
 
-    .df.imp <- mice$imp[[varname]] %>%
+    .df.imp <- mids$imp[[varname]] %>%
       tidyr::gather(.imp, y)
 
     .df.plot <- rbind(.df.obs, .df.imp) %>%
@@ -156,7 +156,7 @@ plot_mice_distrib = function(mice, varlist){
 
   }
 
-  lapply(varlist, plot_variable)
+  lapply(vars, plot_variable)
 
 }
 #**********************************************************
