@@ -4,17 +4,19 @@
 \alias{source_lines}
 \title{Source specific lines in an R file}
 \usage{
-source_lines(file, lines)
+source_lines(file, start = NULL, end = NULL)
 }
 \arguments{
 \item{file}{character string with the path to the file to source.}
 
-\item{lines}{numeric vector of lines to source in \code{file}.}
+\item{start}{row number of first line in \code{file} to source.}
+
+\item{end}{row number of last line in \code{file} to source.}
 }
 \description{
-From https://gist.github.com/christophergandrud/1eb4e095974204b12af9.
+Source specific lines in an R file
 }
 \examples{
 # non-operative
-# source_lines("load-data.R", 1 : 20)
+# source_lines("load-data.R", start = 50)
 }
