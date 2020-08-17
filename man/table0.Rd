@@ -4,8 +4,13 @@
 \alias{table0}
 \title{Version of \code{table} with better defaults}
 \usage{
-table0(..., exclude = if (useNA == "no") c(NA, NaN), useNA = c("no",
-  "ifany", "always"), dnn = list.names(...), deparse.level = 1)
+table0(
+  ...,
+  exclude = if (useNA == "no") c(NA, NaN),
+  useNA = c("no", "ifany", "always"),
+  dnn = list.names(...),
+  deparse.level = 1
+)
 }
 \description{
 First, \code{table0} is a version of \code{table()} in base R that automatically supplies \code{useNA = "always"}.

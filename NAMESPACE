@@ -3,7 +3,7 @@
 export("%notin%")
 export(add_sav_labels)
 export(bp)
-export(charvec_tc_as_string)
+export(charvec_tc)
 export(clear_output_dir)
 export(compare_mice_distrib)
 export(cor0)

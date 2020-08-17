@@ -4,8 +4,7 @@
 \alias{fit_mice_for_diag}
 \title{Create a \code{mice} object for diagnostics}
 \usage{
-fit_mice_for_diag(..., iter10 = FALSE, Rhat.threshold = 1.1,
-  final.maxit = 100)
+fit_mice_for_diag(..., iter10 = FALSE, Rhat.threshold = 1.1, final.maxit = 100)
 }
 \arguments{
 \item{...}{Arguments to be passed to \code{mice} call (typically, dataframe,
