@@ -13,6 +13,7 @@ A collection of miscellaneous useful functions used across projects.
 - `describe_df` to tidily summarize a dataframe
 - `describe_NA` to tidily summarize missing data
 - `count_NA_patterns` to return a count of each missingness pattern in data
+- `count_all` to call `dplyr::count()` on all columns in the dataframe
 - `cor0` to tidily summarize pairwise correlations
 - `table0` to call `table()` with `NA`s included
 - `cross_table` to call `gmodels::CrossTable()` with all proportions suppressed
