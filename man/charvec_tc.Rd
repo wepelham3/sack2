@@ -2,25 +2,32 @@
 % Please edit documentation in R/charvec_tc.R
 \name{charvec_tc}
 \alias{charvec_tc}
-\title{Copy character vector to clipboard as string of collapsed values for pasting}
+\title{Copy character vector to clipboard for pasting}
 \usage{
-charvec_tc(x)
+charvec_tc(x, quote = TRUE, linebreaks = TRUE)
 }
 \arguments{
 \item{x}{Character vector}
+
+\item{quote}{Put quotation marks around elements?}
+
+\item{linebreaks}{Put linebreaks after each element?}
 }
 \value{
-A string of quoted elements of \code{x}, separated by
-commas and linebreaks.
+Nothing - copies result to clipboard.
 }
 \description{
-Takes a character vector, quotes each element and concatenates them, then
-copies the collapsed string to clipboard.
+Concatenate the elements of a character vector and copy
+the collapsed string to the clipboard.
 }
 \details{
-Fast way to create code like \code{c("element1", "element2", ...)}
+Fast way to create text like \code{c("element1", "element2", ...)}
 for pasting into code.
 }
 \examples{
-charvec_tc(c("asdjalksjdlaksjd", "12312093u10923012", "asd"))
+x <- c("asdjalksjdlaksjd", "12312093u10923012", "asd")
+charvec_tc(x)
+charvec_tc(x, quote = FALSE, linebreaks = TRUE)
+charvec_tc(x, quote = TRUE, linebreaks = FALSE)
+charvec_tc(x, quote = FALSE, linebreaks = FALSE)
 }
