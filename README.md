@@ -21,6 +21,8 @@ A collection of miscellaneous useful functions used across projects.
 - `replace_NAs_with_medians` to replace `NA`s with medians throughout dataframe
 - `round0` to round all numeric columns in a dataframe
 - `fnr_names` to find and replace patterns in names of a dataframe
+- `key` to create a random alphanumeric key
+- `tstamp` to create a timestamp
 
 ### Workflow functions:
 
