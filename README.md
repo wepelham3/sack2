@@ -32,6 +32,7 @@ A collection of miscellaneous useful functions used across projects.
 - `bp` to make a noise
 - `tc` to write to the clipboard
 - `charvec_tc` to quickly create pasteable lists for code
+- `charvec_to_casewhen_to_tc` to quickly create `case_when()` statements for code
 - `mk` to source the `RUNME.R` or `MAKEFILE.R` in directory
 - `notify_cell` to send a text to a cell phone
 - `fnr_wd` to find-and-replace in all files in a directory
