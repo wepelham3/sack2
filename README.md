@@ -30,9 +30,6 @@ A collection of miscellaneous useful functions used across projects.
 - `set_up_new_repo` to create basic file structure to start new analysis
 - `clear_output_dir` to delete all files in `output/`
 - `bp` to make a noise
-- `tc` to write to the clipboard
-- `charvec_tc` to quickly create pasteable lists for code
-- `charvec_to_casewhen_to_tc` to quickly create `case_when()` statements for code
 - `mk` to source the `RUNME.R` or `MAKEFILE.R` in directory
 - `notify_cell` to send a text to a cell phone
 - `fnr_wd` to find-and-replace in all files in a directory
@@ -42,6 +39,14 @@ A collection of miscellaneous useful functions used across projects.
 - `save_session_info` to save a `.txt` file with session info
 - `wpsave` to save `ggplot` as both `.png` and `.pdf` and load in viewer
 - `write_wp` to save dataframe as both `.csv` and `.xlsx`
+
+### Functions to interface with the clipboard:
+
+- `tc` to write to the clipboard
+- `tc_as_comment` to write a string to the clipboard formatted as an 80-wide R comment
+- `charvec_tc` to quickly create pasteable lists for code
+- `charvec_to_casewhen_to_tc` to quickly create `case_when()` statements for code
+
 
 ### Functions to tidy (or tidily produce) things:
 
