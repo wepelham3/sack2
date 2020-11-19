@@ -4,12 +4,14 @@
 \alias{pval_to_symbol}
 \title{Convert p values to symbols}
 \usage{
-pval_to_symbol(p, marginal = TRUE)
+pval_to_symbol(p, marginal = TRUE, ns = FALSE)
 }
 \arguments{
 \item{p}{Vector of p values.}
 
-\item{marginal}{boolean. Should include dagger for p < .10?}
+\item{marginal}{boolean. Should return dagger for p < .10?}
+
+\item{ns}{boolean. Should return "ns" for not significant or be empty character string?}
 }
 \description{
 Converts a vector of p values into character vector of the
@@ -18,4 +20,5 @@ symbols ***, **, *, †.
 \examples{
 pval_to_symbol(c(.50, .0004, .098, .044))
 pval_to_symbol(c(.50, .0004, .098, .044), marginal = FALSE)
+pval_to_symbol(c(.50, .0004, .098, .044), marginal = FALSE, ns = TRUE)
 }
