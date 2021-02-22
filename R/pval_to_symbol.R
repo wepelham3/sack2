@@ -23,7 +23,7 @@ pval_to_symbol <- function(p, marginal = TRUE, ns = FALSE){
 
   dplyr::case_when(p < .001 ~ "***",
                    p < .01 ~ "**",
-                   p < .05 < "*",
+                   p < .05 ~ "*",
                    p < .10 ~ marginal,
                    p >= .10 ~ ns)
 
