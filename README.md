@@ -18,6 +18,7 @@ A collection of miscellaneous useful functions used across projects.
 - `table0` to call `table()` with `NA`s included
 - `cross_table` to call `gmodels::CrossTable()` with all proportions suppressed
 - `pval_to_symbol` to convert numeric p values to corresponding significance symbols
+- `pval_to_jama` to convert numeric p values to JAMA format
 - `replace_NAs_with_medians` to replace `NA`s with medians throughout dataframe
 - `round0` to round all numeric columns in a dataframe
 - `fnr_names` to find and replace patterns in names of a dataframe
