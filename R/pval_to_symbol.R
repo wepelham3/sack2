@@ -29,7 +29,3 @@ pval_to_symbol <- function(p, marginal = TRUE, ns = FALSE){
 
 }
 #**********************************************************
-
-pval_to_symbol(c(.50, .0004, .098, .044))
-pval_to_symbol(c(.50, .0004, .098, .044), marginal = FALSE)
-pval_to_symbol(c(.50, .0004, .098, .044), marginal = FALSE, ns = TRUE)
