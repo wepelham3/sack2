@@ -25,7 +25,7 @@ pval_to_symbol <- function(p, marginal = TRUE, ns = FALSE){
                    p < .01 ~ "**",
                    p < .05 < "*",
                    p < .10 ~ marginal,
-                   p.value >= .10 ~ ns)
+                   p >= .10 ~ ns)
 
 }
 #**********************************************************
