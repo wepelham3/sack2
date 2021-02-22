@@ -18,22 +18,18 @@ pval_to_symbol <- function(p, marginal = TRUE, ns = FALSE){
   if (ns == TRUE) ns <- "ns"
   if (ns == FALSE) ns <- ""
 
-  if (marginal == TRUE){
+  if (marginal == TRUE) marginal <- "†"
+  if (marginal == FALSE) marginal <- ""
 
-    p <- ifelse(p < .001, "***",
-                ifelse(p < .01, "**",
-                       ifelse(p < .05, "*",
-                              ifelse(p < .10, "†", ns))))
+  dplyr::case_when(p < .001 ~ "***",
+                   p < .01 ~ "**",
+                   p < .05 < "*",
+                   p < .10 ~ marginal,
+                   p.value >= .10 ~ ns)
 
-  }
-
-  if (marginal == FALSE){
-
-    p <- ifelse(p < .001, "***",
-                ifelse(p < .01, "**",
-                       ifelse(p < .05, "*", ns)))
-  }
-
-  p
 }
 #**********************************************************
+
+pval_to_symbol(c(.50, .0004, .098, .044))
+pval_to_symbol(c(.50, .0004, .098, .044), marginal = FALSE)
+pval_to_symbol(c(.50, .0004, .098, .044), marginal = FALSE, ns = TRUE)
