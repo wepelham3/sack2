@@ -2,21 +2,31 @@
 % Please edit documentation in R/lp.R
 \name{lp}
 \alias{lp}
-\title{Print tibble with all rows shown}
+\title{Print dataframe with all rows shown}
 \usage{
-lp(tibble)
+lp(x)
+}
+\arguments{
+\item{x}{\code{data.frame()} or \code{tibble()}}
 }
 \description{
-*L*ong *p*rint to override standard tibble behavior.
+*L*ong *p*rint to override standard data.frame() and tibble() printing behavior.
 }
 \details{
 Functionally, an alternative to \code{View}.
 }
 \examples{
-tibble <- tibble::as_tibble(mtcars)
 
-lp(tibble)
+x <- do.call(rbind, replicate(20, as.matrix(mtcars), simplify = FALSE))
 
-# cf. suppression behavior
-print(tibble)
+x <- as.data.frame(x)
+
+print(x)
+lp(x)
+
+x <- tibble::as_tibble(x)
+
+print(x)
+lp(x)
+
 }
