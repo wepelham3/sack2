@@ -7,13 +7,17 @@
 #' @param includePequals Include "p = .XX"?
 #' @export
 #' @examples
-#' pval_to_jama(c(.50, .0004, .000000001, .098, .044, .90))
+#' pval_to_jama(c(.50, .0004, .000000001, .098, .044, .048, 0.052))
 #**********************************************************
 pval_to_jama <- function(p, includePequals = FALSE){
 
   out <- dplyr::case_when(p < .001 ~ "<.001",
                           p < .01 ~ sprintf("%0.3f", p),
                           p >= .01 ~ sprintf("%0.2f", p))
+
+  indices.05 <- which(out == .05)
+
+  out[indices.05] <- sprintf("%0.3f", p[indices.05])
 
   out <- stringr::str_replace(out, "^0\\.", ".")
 

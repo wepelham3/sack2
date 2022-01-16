@@ -4,15 +4,17 @@
 \alias{pval_to_jama}
 \title{Convert p values to JAMA format}
 \usage{
-pval_to_jama(p)
+pval_to_jama(p, includePequals = FALSE)
 }
 \arguments{
 \item{p}{Vector of p values.}
+
+\item{includePequals}{Include "p = .XX"?}
 }
 \description{
 Converts a vector of p values into character vector that reflect
 JAMA journal standards for the reporting of p values.
 }
 \examples{
-pval_to_jama(c(.50, .0004, .000000001, .098, .044, .90))
+pval_to_jama(c(.50, .0004, .000000001, .098, .044, .048, 0.052))
 }
