@@ -26,9 +26,12 @@
 #**********************************************************
 describe = function(x, digits = NULL) {
 
+
+  if (is.data.frame(x)) stop("x is a dataframe")
+
   x <- as.vector(x)
 
-  if ( ! is.vector(x)) stop("First argument could not be coerced to a vector.")
+  if ( ! is.vector(x)) stop("x could not be coerced to a vector.")
 
   n <- sum(!is.na(x))
   nmis <- sum(is.na(x))
