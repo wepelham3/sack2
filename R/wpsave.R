@@ -7,15 +7,15 @@
 #' specified, it will be stripped.
 #' @param height Height in inches.
 #' @param width Width in inches.
+#' @param dpi Dots per inch, used for \code{.png}
 #' @export
 #' @examples
 #' # not run; all three will produce same output
 #' # wpsave("output/figure1", height = 4, width = 4)
-#' # wpsave("output/figure1.pdf", height = 4, width = 4)
-#' # wpsave("output/figure1.png", height = 4, width = 4)
+#' # wpsave("output/figure1", height = 4, width = 4, dpi = 1000)
 
 #**********************************************************
-wpsave = function(path, height, width){
+wpsave = function(path, height, width, dpi){
 
   pattern <- "\\.pdf$|\\.png$"
 
@@ -26,10 +26,13 @@ wpsave = function(path, height, width){
   path <- gsub(pattern, "", x = path)
 
   ggsave(filename = paste0(path, ".pdf"),
-         width = width, height = height)
+         width = width,
+         height = height)
 
   ggsave(filename = paste0(path, ".png"),
-         width = width, height = height)
+         width = width,
+         height = height,
+         dpi = dpi)
 
   print(ggplot2::ggplot())
 
