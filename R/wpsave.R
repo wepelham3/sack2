@@ -15,7 +15,7 @@
 #' # wpsave("output/figure1", height = 4, width = 4, dpi = 1000)
 
 #**********************************************************
-wpsave = function(path, height, width, dpi){
+wpsave = function(path, height, width, dpi = 300){
 
   pattern <- "\\.pdf$|\\.png$"
 

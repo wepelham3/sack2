@@ -4,7 +4,7 @@
 \alias{wpsave}
 \title{Wrap ggsave() to save as .png & .pdf, then load to viewer}
 \usage{
-wpsave(path, height, width, dpi)
+wpsave(path, height, width, dpi = 300)
 }
 \arguments{
 \item{path}{Path at which to save file. Note that if file extension is
