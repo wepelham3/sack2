@@ -25,6 +25,7 @@ A collection of miscellaneous useful functions used across projects.
 - `key` to create a random alphanumeric key
 - `tstamp` to create a timestamp
 - `to_missind` to recode target column in dataframe to indicator of missingness
+- `pad_number` to pad a number with leading zeroes when appropriate
 
 ### Workflow functions:
 
