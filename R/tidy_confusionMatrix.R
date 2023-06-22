@@ -28,7 +28,7 @@
 
 #**********************************************************
 tidy_confusionMatrix = function(confusionMatrix) {
-  tibble::data_frame(metric = attr(c(confusionMatrix$overall, confusionMatrix$byClass), "names"),
+  tibble::tibble(metric = attr(c(confusionMatrix$overall, confusionMatrix$byClass), "names"),
                      value = c(confusionMatrix$overall, confusionMatrix$byClass)) %>%
     dplyr::mutate(metric = stringr::str_to_lower(metric) %>%
                     stringr::str_replace_all("\\ ", "\\."))

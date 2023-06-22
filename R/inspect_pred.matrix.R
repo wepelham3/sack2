@@ -13,10 +13,10 @@
 
 #**********************************************************
 inspect_pred.matrix = function(data, pred.matrix) {
-    tibble::data_frame(variable = names(data),
-                       count.NA = colSums(is.na(data)),
-                       prop.NA = colMeans(is.na(data)) %>% round(2),
-                       imputed.by = rowSums(pred.matrix),
-                       used.in = colSums(pred.matrix))
+    tibble::tibble(variable = names(data),
+                   count.NA = colSums(is.na(data)),
+                   prop.NA = colMeans(is.na(data)) %>% round(2),
+                   imputed.by = rowSums(pred.matrix),
+                   used.in = colSums(pred.matrix))
 }
 #**********************************************************

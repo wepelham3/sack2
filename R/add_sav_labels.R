@@ -35,8 +35,8 @@ add_sav_labels = function(data, match, from){
     stop("Input is neither a valid path nor an existing dataframe in R environment.")
   }
 
-  label.dictionary <- tibble::data_frame(name = names(labelled.data),
-                                         label = sjlabelled::get_label(labelled.data)) %>%
+  label.dictionary <- tibble::tibble(name = names(labelled.data),
+                                     label = sjlabelled::get_label(labelled.data)) %>%
     plyr::rename(c("name" = match))
 
   data <- data %>%

@@ -25,11 +25,11 @@ inspect_sav = function(path.or.data, describe = FALSE) {
         stop("Input is neither a valid path nor an existing dataframe in R environment.")
     }
 
-    data = tibble::data_frame(name = names(labelled.data),
-                            label = sjlabelled::get_label(labelled.data),
-                            mapping = "",
-                            values = lapply(labelled.data, sjlabelled::get_values),
-                            value.labels = sjlabelled::get_labels(labelled.data))
+    data = tibble::tibble(name = names(labelled.data),
+                          label = sjlabelled::get_label(labelled.data),
+                          mapping = "",
+                          values = lapply(labelled.data, sjlabelled::get_values),
+                          value.labels = sjlabelled::get_labels(labelled.data))
 
     # fill new column mapping values to value labels
     for (i in 1 : nrow(data)) {

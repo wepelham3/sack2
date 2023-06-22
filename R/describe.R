@@ -38,7 +38,7 @@ describe = function(x, digits = NULL) {
 
   distinct <- length(na.omit(unique(x)))
 
-  results <- tibble::data_frame(n, nmis, distinct)
+  results <- tibble::tibble(n, nmis, distinct)
 
   if (is.numeric(x)){
     mean <- mean(x, na.rm = TRUE)

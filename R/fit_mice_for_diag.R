@@ -39,7 +39,7 @@ fit_mice_for_diag = function (..., iter10 = FALSE,
 
   current.max.Rhat <- 999
 
-  df.Rhats <- tibble::data_frame()
+  df.Rhats <- tibble::tibble()
 
   while (current.max.Rhat > Rhat.threshold) {
 
