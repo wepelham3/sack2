@@ -47,7 +47,8 @@ A collection of miscellaneous useful functions used across projects.
 - `tc` to write to the clipboard
 - `tc_as_comment` to write a string to the clipboard formatted as an 80-wide R comment
 - `charvec_tc` to quickly create pasteable lists for code
-- `charvec_to_casewhen_to_tc` to quickly create `case_when()` statements for code
+- `charvec_to_casewhen_tc` to quickly create `case_when()` statements for code
+- `charvecs_to_named_charvec_tc` to quickly create a named character vector mapping 1 list to another
 
 
 ### Functions to tidy (or tidily produce) things:
